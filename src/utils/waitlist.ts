@@ -40,6 +40,35 @@ export async function checkEmailExists(email: string): Promise<boolean> {
   }
 }
 
+export async function getExistingUserData(email: string): Promise<{ id: string; referralLink: string; numReferrals: number } | null> {
+  try {
+    const doc = new GoogleSpreadsheet(SHEET_ID as string, serviceAccountAuth);
+    await doc.loadInfo();
+    const sheet = doc.sheetsByTitle[SHEET_TITLE as string];
+    if (!sheet) {
+      throw new Error(`Sheet '${SHEET_TITLE}' not found.`);
+    }
+
+    const rows = await sheet.getRows();
+    const userRow = rows.find((row: GoogleSpreadsheetRow) => 
+      row.get('email')?.toLowerCase() === email.toLowerCase()
+    );
+    
+    if (userRow) {
+      return {
+        id: userRow.get('id'),
+        referralLink: userRow.get('referral_link'),
+        numReferrals: parseInt(userRow.get('num_referrals') || '0')
+      };
+    }
+    
+    return null;
+  } catch (error) {
+    console.error('Failed to get existing user data:', error);
+    throw error;
+  }
+}
+
 export async function addToWaitlist(email: string, referralId?: string): Promise<{ id: string; referralLink: string }> {
   try {
     const doc = new GoogleSpreadsheet(SHEET_ID as string, serviceAccountAuth);

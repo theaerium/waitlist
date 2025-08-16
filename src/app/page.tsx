@@ -15,6 +15,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [referralLink, setReferralLink] = useState<string | null>(null);
   const [referralId, setReferralId] = useState<string | null>(null);
+  const [numReferrals, setNumReferrals] = useState<number>(0);
+  const [isExistingUser, setIsExistingUser] = useState(false);
 
   // Check for referral ID in URL on page load
   useEffect(() => {
@@ -24,6 +26,29 @@ export default function Home() {
       setReferralId(ref);
     }
   }, []);
+
+  const checkExistingUser = async (email: string) => {
+    try {
+      const res = await fetch("/api/get-user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      
+      if (res.ok) {
+        const data = await res.json();
+        setReferralLink(data.userData.referralLink);
+        setNumReferrals(data.userData.numReferrals);
+        setIsExistingUser(true);
+        setStatus("existing");
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error("Error checking existing user:", error);
+      return false;
+    }
+  };
 
   const handleJoinWaitlist = async () => {
     if (!email.trim()) {
@@ -35,6 +60,13 @@ export default function Home() {
     setStatus(null);
     
     try {
+      // First check if user already exists
+      const isExisting = await checkExistingUser(email);
+      if (isExisting) {
+        setIsLoading(false);
+        return;
+      }
+
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -50,6 +82,8 @@ export default function Home() {
         setStatus("success");
         setEmail("");
         setReferralLink(data.referralLink);
+        setNumReferrals(0);
+        setIsExistingUser(false);
         // Clear referral ID from URL without page reload
         const newUrl = window.location.pathname;
         window.history.replaceState({}, '', newUrl);
@@ -101,10 +135,10 @@ export default function Home() {
             <span className="bg-aether-primary px-2 pb-1 rounded" style={{ background: 'linear-gradient(to top, #ccff33 40%, transparent 50%)' }}>never</span>
           </h1>
           <p className="text-lg text-gray-700 text-center lg:text-left max-w-md">
-            Shop without spending your own cash by turning your unused items into instant buying power and purchase new things immediately. <strong>It&apos;s like getting everything for free.</strong>
+            Shop without spending your own cash by turning your unused items into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
           </p>
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md">
-            10 signups win $50. More shares = more chances!
+            10 lucky people will win $50 for signing up. <br /> More shares = more chances!
           </p>
           {referralId && (
             <div className="text-sm text-black bg-aether-primary px-3 py-2 rounded-lg">
@@ -117,20 +151,28 @@ export default function Home() {
               label={isLoading ? "Joining..." : "Join the waitlist"} 
               onClick={handleJoinWaitlist} 
             />
-            {status && (
+            {status && status !== "success" && status !== "existing" && (
               <div className={`text-sm ${
-                status === "success" 
-                  ? "text-green-600" 
-                  : status.includes("already joined") 
-                    ? "text-black" 
-                    : "text-red-600"
+                status.includes("already joined") 
+                  ? "text-black" 
+                  : "text-red-600"
               }`}>
-                {status === "success" ? "" : status}
+                {status}
               </div>
             )}
             {referralLink && (
               <div className="mt-4 p-4 bg-gray-50 rounded-lg border">
-                <p className="text-sm font-medium text-gray-700 mb-2">Successfully joined! Here&apos;s your referral link:</p>
+                <p className="text-sm font-medium text-gray-700 mb-2">
+                  {isExistingUser 
+                    ? "Welcome back! Here's your referral link:" 
+                    : "Successfully joined! Here's your referral link:"
+                  }
+                </p>
+                {isExistingUser && numReferrals > 0 && (
+                  <p className="text-xs text-gray-600 mb-2">
+                    🎉 You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
+                  </p>
+                )}
                 <div className="flex items-center gap-2">
                   <input 
                     type="text" 
@@ -154,7 +196,7 @@ export default function Home() {
         </div>
 
         {/* Right side - iPhone mockup */}
-        <div className="lg:w-1/2 flex justify-center lg:justify-start lg:mt-24">
+        <div className="lg:w-1/2 flex justify-center lg:justify-start lg:mt-40">
           <Image 
             src="/iphone_mock.png" 
             alt="iPhone App Mockup" 
