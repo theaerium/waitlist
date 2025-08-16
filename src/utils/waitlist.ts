@@ -1,4 +1,4 @@
-import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { GoogleSpreadsheet, GoogleSpreadsheetRow } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
 const serviceAccountAuth = new JWT({
@@ -29,7 +29,7 @@ export async function checkEmailExists(email: string): Promise<boolean> {
     }
 
     const rows = await sheet.getRows();
-    const existingEmail = rows.find((row: any) => 
+    const existingEmail = rows.find((row: GoogleSpreadsheetRow) => 
       row.get('email')?.toLowerCase() === email.toLowerCase()
     );
     
