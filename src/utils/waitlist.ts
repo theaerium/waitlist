@@ -1,4 +1,4 @@
-import { GoogleSpreadsheet, GoogleSpreadsheetRow } from 'google-spreadsheet';
+import { GoogleSpreadsheet, GoogleSpreadsheetRow, GoogleSpreadsheetWorksheet } from 'google-spreadsheet';
 import { JWT } from 'google-auth-library';
 
 const serviceAccountAuth = new JWT({
@@ -60,7 +60,7 @@ export async function addToWaitlist(email: string, referralId?: string): Promise
 
     // If this is a referral signup, update the referrer's count
     if (referralId) {
-      await updateReferralCount(sheet, referralId);
+      await updateReferralCount(sheet as GoogleSpreadsheetWorksheet, referralId);
     }
 
     await sheet.addRow({ 
@@ -78,10 +78,10 @@ export async function addToWaitlist(email: string, referralId?: string): Promise
   }
 }
 
-async function updateReferralCount(sheet: any, referralId: string): Promise<void> {
+async function updateReferralCount(sheet: GoogleSpreadsheetWorksheet, referralId: string): Promise<void> {
   try {
     const rows = await sheet.getRows();
-    const referrerRow = rows.find((row: any) => row.get('id') === referralId);
+    const referrerRow = rows.find((row: GoogleSpreadsheetRow) => row.get('id') === referralId);
     
     if (referrerRow) {
       const currentCount = parseInt(referrerRow.get('num_referrals') || '0');
@@ -104,7 +104,7 @@ export async function getReferralStats(referralId: string): Promise<{ numReferra
     }
 
     const rows = await sheet.getRows();
-    const userRow = rows.find((row: any) => row.get('id') === referralId);
+    const userRow = rows.find((row: GoogleSpreadsheetRow) => row.get('id') === referralId);
     
     if (userRow) {
       return {
