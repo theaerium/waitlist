@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import Home from "../page";
 
 interface Props {
-  params: {
+  params: Promise<{
     ref: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { ref } = await params;
+  
   return {
     title: "Aerium - Buy now, pay never",
-    description: "Shop without spending your own cash by turning your unused items into instant buying power. It's like getting everything for free.",
+    description: "Turn your unused items into instant buying power. It's like getting everything for free.",
     keywords: ["trading", "buying", "selling", "cash", "items", "marketplace"],
     authors: [{ name: "Aerium" }],
     openGraph: {
       title: "Aerium - Buy now, pay never",
-      description: "Shop without spending your own cash by turning your unused items into instant buying power. It's like getting everything for free.",
-      url: `https://joinaerium.com/${params.ref}`,
+      description: "Turn your unused items into instant buying power. It's like getting everything for free.",
+      url: `https://joinaerium.com/${ref}`,
       siteName: "Aerium",
       images: [
         {
@@ -32,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "Aerium - Buy now, pay never",
-      description: "Shop without spending your own cash by turning your unused items into instant buying power. It's like getting everything for free.",
+      description: "Turn your unused items into instant buying power. It's like getting everything for free.",
       images: ["/og-image.png"],
       creator: "@aerium",
     },
@@ -43,6 +45,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function ReferralPage({ params }: Props) {
+export default async function ReferralPage({ params }: Props) {
   return <Home />;
 }
