@@ -119,17 +119,17 @@ export default function Home() {
   };
 
   return (
-    <div className="font-sans min-h-screen p-8 sm:p-20">
-      <div className="flex flex-col lg:flex-row items-center gap-8 max-w-7xl mx-auto">
+    <div className="font-sans min-h-screen p-4 sm:p-12">
+      <div className="flex flex-col lg:flex-row items-center gap-6 max-w-7xl mx-auto">
         {/* Left side - Text content */}
-        <div className="flex flex-col gap-8 lg:w-1/2 items-center lg:items-start">
+        <div className="flex flex-col gap-6 lg:w-1/2 items-center lg:items-start">
           <div className="flex w-full justify-center lg:justify-start">
             <Image 
               src="/logo.png" 
               alt="Logo" 
               width={logoWidth} 
               height={logoHeight} 
-              className="mb-8"
+              className="mb-4"
             />
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold text-center lg:text-left">
@@ -137,17 +137,20 @@ export default function Home() {
             <span className="bg-aether-primary px-2 pb-1 rounded" style={{ background: 'linear-gradient(to top, #ccff33 40%, transparent 50%)' }}>never</span>
           </h1>
           <p className="text-lg text-gray-700 text-center lg:text-left max-w-md">
-            Turn your unused items into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
+            Turn items you don&apos;t use into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
           </p>
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md">
-            10 lucky people will win $50 for signing up. <br /> More shares = more chances!
+          We give you cash instantly so you don&apos;t have to wait for your stuff to sell. Then you can purchase items from your wishlist on our marketplace or cash out and use the money anywhere.
+          </p>
+          <p className="text-md text-gray-500 text-center lg:text-left max-w-md italic">
+            More shares = more chances to be one of the first people on the platform!
           </p>
           {referralId && (
             <div className="text-sm text-black bg-aether-primary px-3 py-2 rounded-lg">
               🎉 You were invited by a friend! Sign up to get your own referral link.
             </div>
           )}
-          <div className="flex flex-col gap-4 items-center lg:items-start">
+          <div className="flex flex-col gap-3 items-center lg:items-start">
             <EmailBox placeholder="Enter your email, we'll launch soon!" value={email} onChange={setEmail} />
             <Button 
               label={isLoading ? "Joining..." : "Join the waitlist"} 
@@ -163,16 +166,16 @@ export default function Home() {
               </div>
             )}
             {referralLink && (
-              <div className="mt-4 p-4 bg-gray-50 rounded-lg border">
-                <p className="text-sm font-medium text-gray-700 mb-2">
-                  {isExistingUser 
-                    ? "Welcome back! Here's your referral link:" 
-                    : "Successfully joined! Here's your referral link:"
-                  }
-                </p>
+              <div className="mt-3 p-4 bg-gray-50 rounded-lg border">
+                                  <p className="text-sm font-medium text-gray-700 mb-2">
+                    {isExistingUser 
+                      ? "Welcome back! Here's your referral link:" 
+                      : "Successfully joined! Here's your referral link:"
+                    }
+                  </p>
                 {isExistingUser && numReferrals > 0 && (
                   <p className="text-xs text-gray-600 mb-2">
-                    🎉 You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
+                    ✨ You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
                   </p>
                 )}
                 <div className="flex items-center gap-2">
@@ -190,7 +193,7 @@ export default function Home() {
                   </button>
                 </div>
                 <p className="text-xs text-gray-500 mt-2">
-                  Share this link with friends to increase your chances of winning $50!
+                  Share this link to move up the waitlist! Top sharers will get early access.
                 </p>
               </div>
             )}
@@ -198,12 +201,12 @@ export default function Home() {
         </div>
 
         {/* Right side - iPhone mockup */}
-        <div className="lg:w-1/2 flex justify-center lg:justify-start lg:mt-40">
+        <div className="lg:w-1/2 flex justify-center lg:justify-start lg:mt-32">
           <Image 
             src="/iphone_mock.png" 
             alt="iPhone App Mockup" 
-            width={400 * 1.2} 
-            height={800 * 1.2} 
+            width={400} 
+            height={800} 
             className="max-w-full h-auto"
           />
         </div>
