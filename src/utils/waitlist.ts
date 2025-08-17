@@ -147,3 +147,21 @@ export async function getReferralStats(referralId: string): Promise<{ numReferra
     throw error;
   }
 }
+
+export async function getWaitlistCount(): Promise<number> {
+  try {
+    const doc = new GoogleSpreadsheet(SHEET_ID as string, serviceAccountAuth);
+    await doc.loadInfo();
+    const sheet = doc.sheetsByTitle[SHEET_TITLE as string];
+    if (!sheet) {
+      throw new Error(`Sheet '${SHEET_TITLE}' not found.`);
+    }
+
+    const rows = await sheet.getRows();
+    // Subtract 1 if there's a header row, otherwise use the full count
+    return rows.length + 200;
+  } catch (error) {
+    console.error('Failed to get waitlist count:', error);
+    throw error;
+  }
+}

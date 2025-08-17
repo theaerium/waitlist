@@ -17,6 +17,7 @@ export default function Home() {
   const [referralId, setReferralId] = useState<string | null>(null);
   const [numReferrals, setNumReferrals] = useState<number>(0);
   const [isExistingUser, setIsExistingUser] = useState(false);
+  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
   // Check for referral ID in URL on page load
   useEffect(() => {
@@ -27,6 +28,23 @@ export default function Home() {
     if (refFromPath && refFromPath.length === 8 && /^[a-z0-9]+$/.test(refFromPath)) {
       setReferralId(refFromPath);
     }
+  }, []);
+
+  // Fetch waitlist count on page load
+  useEffect(() => {
+    const fetchWaitlistCount = async () => {
+      try {
+        const res = await fetch("/api/waitlist-count");
+        if (res.ok) {
+          const data = await res.json();
+          setWaitlistCount(data.count);
+        }
+      } catch (error) {
+        console.error("Error fetching waitlist count:", error);
+      }
+    };
+
+    fetchWaitlistCount();
   }, []);
 
   const checkExistingUser = async (email: string) => {
@@ -145,6 +163,11 @@ export default function Home() {
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md italic">
             More shares = more chances to be one of the first people on the platform!
           </p>
+          {waitlistCount !== null && (
+            <p className="text-sm text-gray-400 text-center lg:text-left font-bold">
+              Join {waitlistCount.toLocaleString()} others already waiting!
+            </p>
+          )}
           {referralId && (
             <div className="text-sm text-black bg-aether-primary px-3 py-2 rounded-lg">
               🎉 You were invited by a friend! Sign up to get your own referral link.
