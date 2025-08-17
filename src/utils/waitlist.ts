@@ -85,7 +85,7 @@ export async function addToWaitlist(email: string, referralId?: string): Promise
     }
 
     const id = generateAlphanumericId(8);
-    const referralLink = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}?ref=${id}`;
+    const referralLink = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/${id}`;
 
     // If this is a referral signup, update the referrer's count
     if (referralId) {

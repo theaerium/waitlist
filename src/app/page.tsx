@@ -20,10 +20,12 @@ export default function Home() {
 
   // Check for referral ID in URL on page load
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const ref = urlParams.get('ref');
-    if (ref) {
-      setReferralId(ref);
+    const pathSegments = window.location.pathname.split('/');
+    const refFromPath = pathSegments[pathSegments.length - 1];
+    
+    // Check if the last segment looks like a referral ID (8 characters, alphanumeric)
+    if (refFromPath && refFromPath.length === 8 && /^[a-z0-9]+$/.test(refFromPath)) {
+      setReferralId(refFromPath);
     }
   }, []);
 
@@ -135,7 +137,7 @@ export default function Home() {
             <span className="bg-aether-primary px-2 pb-1 rounded" style={{ background: 'linear-gradient(to top, #ccff33 40%, transparent 50%)' }}>never</span>
           </h1>
           <p className="text-lg text-gray-700 text-center lg:text-left max-w-md">
-            Shop without spending your own cash by turning your unused items into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
+            Turn your unused items into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
           </p>
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md">
             10 lucky people will win $50 for signing up. <br /> More shares = more chances!
@@ -200,8 +202,8 @@ export default function Home() {
           <Image 
             src="/iphone_mock.png" 
             alt="iPhone App Mockup" 
-            width={400} 
-            height={800} 
+            width={400 * 1.2} 
+            height={800 * 1.2} 
             className="max-w-full h-auto"
           />
         </div>
