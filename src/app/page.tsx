@@ -158,10 +158,10 @@ export default function Home() {
             Turn items you don&apos;t use into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
           </p>
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md">
-          We give you cash instantly so you don&apos;t have to wait for your stuff to sell. Then you can purchase items from your wishlist on our marketplace or cash out and use the money anywhere.
+          When you make a purchase with the Aerium card, we instantly pay you out at the market price sourced across multiple platforms. We take those items, sell them on your behalf. If they don&apos;t sell that&apos;s on us. To cover our costs, we take a flat 5% fee on all transactions.
           </p>
           <p className="text-md text-gray-500 text-center lg:text-left max-w-md italic">
-            More shares = more chances to be one of the first people on the platform!
+            More shares = more chances to be one of the first people to gain access!
           </p>
           {waitlistCount !== null && (
             <p className="text-sm text-gray-400 text-center lg:text-left font-bold">
@@ -228,8 +228,8 @@ export default function Home() {
           <Image 
             src="/iphone_mock.png" 
             alt="iPhone App Mockup" 
-            width={400} 
-            height={800} 
+            width={400 * 1.2} 
+            height={800 * 1.2} 
             className="max-w-full h-auto"
           />
         </div>
