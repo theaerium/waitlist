@@ -18,6 +18,7 @@ export default function Home() {
   const [numReferrals, setNumReferrals] = useState<number>(0);
   const [isExistingUser, setIsExistingUser] = useState(false);
   const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
+  const [activeSection, setActiveSection] = useState("waitlist");
 
   // Check for referral ID in URL on page load
   useEffect(() => {
@@ -136,68 +137,124 @@ export default function Home() {
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setActiveSection("waitlist");
+  };
+
   return (
-    <div className="font-sans min-h-screen p-4 sm:p-12">
-      <div className="flex flex-col lg:flex-row items-center gap-6 max-w-7xl mx-auto">
+    <div className="font-sans background-container">
+      {/* Logo positioned above the container */}
+      <div className="logo-above-container">
+        <Image 
+          src="/logo_white.png" 
+          alt="Logo" 
+          width={logoWidth} 
+          height={logoHeight}
+        />
+      </div>
+
+      {/* Navigation menu above the container */}
+      <div className="nav-above-container">
+        <div 
+          className={`nav-item ${activeSection === "waitlist" ? "active" : ""}`} 
+          onClick={scrollToTop}
+        >
+          Join our waitlist
+        </div>
+        <div 
+          className={`nav-item ${activeSection === "our-process" ? "active" : ""}`} 
+          onClick={() => scrollToSection('our-process')}
+        >
+          Our process
+        </div>
+        <div 
+          className={`nav-item ${activeSection === "items-we-look-for" ? "active" : ""}`} 
+          onClick={() => scrollToSection('items-we-look-for')}
+        >
+          Items we look for
+        </div>
+      </div>
+      
+      <div className="main-container">
+        {/* Floating background shapes contained within main rectangle */}
+        <div className="floating-shape shape-1"></div>
+        <div className="floating-shape shape-2"></div>
+        <div className="floating-shape shape-3"></div>
+        <div className="floating-shape shape-4"></div>
+        <div className="floating-shape shape-5"></div>
+        <div className="floating-shape shape-6"></div>
+        <div className="floating-shape shape-7"></div>
+        <div className="floating-shape shape-8"></div>
+        <div className="floating-shape shape-9"></div>
+        <div className="floating-shape shape-10"></div>
+        <div className="floating-shape shape-11"></div>
+        <div className="floating-shape shape-12"></div>
+        <div className="floating-shape shape-13"></div>
+        <div className="floating-shape shape-14"></div>
+        <div className="floating-shape shape-15"></div>
+        <div className="floating-shape shape-16"></div>
+        <div className="floating-shape shape-17"></div>
+        <div className="floating-shape shape-18"></div>
+        
+        <div className="content-overlay">
+          <div className="flex flex-col lg:flex-row items-center gap-6 max-w-6xl mx-auto">
         {/* Left side - Text content */}
-        <div className="flex flex-col gap-6 lg:w-1/2 items-center lg:items-start">
-          <div className="flex w-full justify-center lg:justify-start">
-            <Image 
-              src="/logo.png" 
-              alt="Logo" 
-              width={logoWidth} 
-              height={logoHeight} 
-              className="mb-4"
-            />
+        <div className="flex flex-col gap-10 lg:w-1/2 items-center lg:items-start h-full justify-center lg:-ml-8">
+          {/* Main heading with offset positioning */}
+          <div className="w-full">
+            <h1 className="text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+              <span className="pr-3">OUT WITH THE</span>
+              <span className="inline-block align-baseline relative">
+                <span className="text-white/70 line-through decoration-white/60 decoration-4">OLD</span>
+              </span>
+            </h1>
+            <h2 className="mt-3 text-5xl lg:text-6xl font-extrabold text-white tracking-tight pl-8 leading-tight">
+              <span className="pr-3">IN WITH THE</span>
+              <span className="inline-block align-baseline relative">
+                <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-lg border border-white/30 text-white shadow-[0_8px_32px_rgba(0,0,0,0.15)]">NEW</span>
+              </span>
+            </h2>
           </div>
-          <h1 className="text-4xl lg:text-5xl font-bold text-center lg:text-left">
-            Buy now, pay{" "}
-            <span className="bg-aether-primary px-2 pb-1 rounded" style={{ background: 'linear-gradient(to top, #ccff33 40%, transparent 50%)' }}>never</span>
-          </h1>
-          <p className="text-lg text-gray-700 text-center lg:text-left max-w-md">
-            Turn items you don&apos;t use into instant buying power. <strong>It&apos;s like getting everything for free.</strong>
+
+          {/* Subheading */}
+          <p className="text-xl text-white/90 text-center max-w-2xl leading-relaxed">
+            Use your new <span className="font-semibold bg-white/15 backdrop-blur-sm px-3 py-1 rounded-md border border-white/25">favourite card</span> to turn items you don't use into <span className="font-semibold bg-white/20 backdrop-blur-md px-3 py-1 rounded-md border border-white/30">instant buying power</span>
           </p>
-          <p className="text-md text-gray-500 text-center lg:text-left max-w-md">
-          When you make a purchase with the Aerium card, we instantly pay you at the market price sourced across multiple platforms. We take those items and sell them on your behalf. If they don&apos;t sell that&apos;s on us. To cover our costs, we take a flat 5% fee on all transactions.
-          </p>
-          <p className="text-md text-gray-500 text-center lg:text-left max-w-md italic">
-            More shares = more chances to be one of the first people to gain access!
-          </p>
-          {waitlistCount !== null && (
-            <p className="text-sm text-gray-400 text-center lg:text-left font-bold">
-              Join {waitlistCount.toLocaleString()} others already waiting!
-            </p>
-          )}
-          {referralId && (
-            <div className="text-sm text-black bg-aether-primary px-3 py-2 rounded-lg">
-              🎉 You were invited by a friend! Sign up to get your own referral link.
-            </div>
-          )}
-          <div className="flex flex-col gap-3 items-center lg:items-start">
-            <EmailBox placeholder="Enter your email, we'll launch soon!" value={email} onChange={setEmail} />
+
+          {/* Email + CTA */}
+          <div className="flex flex-col gap-4 items-center w-full max-w-lg mx-auto">
+            <EmailBox placeholder="Enter your email" value={email} onChange={setEmail} />
             <Button 
-              label={isLoading ? "Joining..." : "Join the waitlist"} 
+              label={isLoading ? "Requesting..." : "Request access to the Aerium card"} 
               onClick={handleJoinWaitlist} 
             />
             {status && status !== "success" && status !== "existing" && (
               <div className={`text-sm ${
                 status.includes("already joined") 
-                  ? "text-black" 
-                  : "text-red-600"
+                  ? "text-white" 
+                  : "text-red-300"
               }`}>
                 {status}
               </div>
             )}
             {referralLink && (
-              <div className="mt-3 p-4 bg-gray-50 rounded-lg border">
-                                  <p className="text-sm font-medium text-gray-700 mb-2">
-                    {isExistingUser 
-                      ? "Welcome back! Here's your referral link:" 
-                      : "Successfully joined! Here's your referral link:"
-                    }
-                  </p>
+              <div className="mt-4 p-4 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 shadow-lg w-full">
+                <p className="text-sm font-medium text-white mb-2">
+                  {isExistingUser 
+                    ? "Welcome back! Here's your referral link:" 
+                    : "Successfully joined! Here's your referral link:"}
+                </p>
                 {isExistingUser && numReferrals > 0 && (
-                  <p className="text-xs text-gray-600 mb-2">
+                  <p className="text-xs text-white/80 mb-2">
                     ✨ You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
                   </p>
                 )}
@@ -206,16 +263,16 @@ export default function Home() {
                     type="text" 
                     value={referralLink} 
                     readOnly 
-                    className="flex-1 px-3 py-2 text-sm border rounded bg-white"
+                    className="flex-1 px-3 py-2 text-sm border border-white/20 rounded bg-white/5 backdrop-blur-sm text-white"
                   />
                   <button 
                     onClick={copyReferralLink}
-                    className="px-3 py-2 bg-aether-primary text-black rounded border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-150 text-sm font-medium"
+                    className="px-3 py-2 bg-white/20 backdrop-blur-md text-white rounded border border-white/30 hover:bg-white/30 transition-all duration-150 text-sm font-medium"
                   >
                     Copy
                   </button>
                 </div>
-                <p className="text-xs text-gray-500 mt-2">
+                <p className="text-xs text-white/70 mt-2">
                   Share this link to move up the waitlist! Top sharers will get early access.
                 </p>
               </div>
@@ -223,15 +280,80 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right side - iPhone mockup */}
-        <div className="lg:w-1/2 flex justify-center lg:justify-start lg:mt-32">
-          <Image 
-            src="/iphone_mock.png" 
-            alt="iPhone App Mockup" 
-            width={400 * 1.2}
-            height={800 * 1.2} 
-            className="max-w-full h-auto"
-          />
+        {/* Right side - App mockups */}
+        <div className="lg:w-1/2 flex justify-center lg:justify-end relative z-10">
+          <div className="flex gap-4 items-center lg:mt-0 -mr-20">
+            <Image 
+              src="/Aerium_v2.png" 
+              alt="Aerium App Interface" 
+              width={280}
+              height={560} 
+              className="max-w-full h-auto"
+            />
+            <Image 
+              src="/apple_wallet.png" 
+              alt="Apple Wallet Integration" 
+              width={280}
+              height={560} 
+              className="max-w-full h-auto"
+            />
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How it works section */}
+      <div id="our-process" className="info-section">
+        <h2>Our simple process</h2>
+        <div className="content-grid">
+          <div className="info-card">
+            <h3>1. Sign up for Aerium</h3>
+            <p>Download the Aerium app and create an account. We'll issue you a virtual Aerium card.</p>
+          </div>
+          <div className="info-card">
+            <h3>2. Upload your items</h3>
+            <p>Upload your items and we'll assign a market value to them. We'll load your Aerium card with the value of your items.</p>
+          </div>
+          <div className="info-card">
+            <h3>3. Shop with Aerium</h3>
+            <p>Use your Aerium card to make any purchase, we'll pay the vendor, and initiate the selling of your items.</p>
+          </div>
+          <div className="info-card">
+            <h3>4. We Handle the Rest</h3>
+            <p>If they don't sell, that's our risk, not yours. We'll coordinate the shipping of your item and take a flat percentage fee of the transaction.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Items we look for section */}
+      <div id="items-we-look-for" className="info-section">
+        <h2>Items we look for</h2>
+        <p className="text-lg text-white/90 text-center max-w-4xl mx-auto mb-8">
+          Currently, we're focused on women's fashion items. Every item is authenticated and quality-checked during shipping.
+        </p>
+        <div className="content-grid">
+          <div className="info-card">
+            <h3>👟 Footwear</h3>
+            <p>Sneakers, shoes, heels, and other footwear (inclduding cowboy boots).</p>
+          </div>
+          <div className="info-card">
+            <h3>👕 Clothing</h3>
+            <p>Premium, designer, streetwear, and performance apparel across women’s and unisex sizing.</p>
+          </div>
+          <div className="info-card">
+            <h3>👜 Handbags</h3>
+            <p>Handbags and small leather items (purses, wallets, etc.).</p>
+          </div>
+          <div className="info-card">
+            <h3>⌚ Accessories</h3>
+            <p>Watches, fine jewelry, and accessories (belts, sunglasses, etc.).</p>
+          </div>
+        </div>
+        <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm rounded-lg border border-white/20">
+          <p className="text-center text-white/80 text-lg">
+            <span className="font-semibold text-white">In the future:</span> We're working on expanding to other more apparel items, electronics, gaming, collectibles, and more categories. Join Aerium to be the first to know when we add new item types!
+          </p>
         </div>
       </div>
     </div>
