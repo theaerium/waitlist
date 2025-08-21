@@ -14,13 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aerium - Buy now, pay never",
-  description: "Turn your unused items into instant buying power. It's like getting everything for free.",
-  keywords: ["trading", "buying", "selling", "cash", "items", "marketplace"],
+  metadataBase: new URL('https://joinaerium.com'),
+  title: "Aerium - Out with the old, in with the new",
+  description: "Use your new favourite card to turn items you don't use into instant buying power.",
+  keywords: ["fashion", "resale", "trading", "designer", "streetwear", "fintech", "card"],
   authors: [{ name: "Aerium" }],
   openGraph: {
-    title: "Aerium - Buy now, pay never",
-    description: "Turn your unused items into instant buying power. It's like getting everything for free.",
+    title: "Aerium - Out with the old, in with the new",
+    description: "Use your new favourite card to turn items you don't use into instant buying power.",
     url: "https://joinaerium.com",
     siteName: "Aerium",
     images: [
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Aerium - Buy now, pay never",
+        alt: "Aerium - Out with the old, in with the new",
       },
     ],
     locale: "en_US",
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aerium - Buy now, pay never",
-    description: "Turn your unused items into instant buying power. It's like getting everything for free.",
+    title: "Aerium - Out with the old, in with the new",
+    description: "Use your new favourite card to turn items you don't use into instant buying power.",
     images: ["/og-image.png"],
     creator: "@aerium",
   },
@@ -58,7 +59,7 @@ export default function RootLayout({
         {/* Additional meta tags for better link previews */}
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta name="twitter:image:alt" content="Aerium - Buy now, pay never" />
+        <meta name="twitter:image:alt" content="Aerium - Out with the old, in with the new" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

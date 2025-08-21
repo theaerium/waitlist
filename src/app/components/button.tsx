@@ -8,7 +8,7 @@ export default function Button({ label, icon, onClick }: ButtonProps) {
   return (
     <button 
       onClick={onClick}
-      className="flex items-center gap-2 bg-aether-primary px-4 py-2 rounded-lg border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-300 font-medium w-[300px] justify-center"
+      className="flex items-center gap-2 bg-white/20 backdrop-blur-md text-white px-4 py-3 rounded-lg border border-white/30 hover:bg-white/30 hover:border-white/40 active:bg-white/15 transition-all duration-300 font-medium w-full justify-center shadow-lg text-lg"
     >
       <span>{label}</span>
       {icon || (
