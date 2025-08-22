@@ -3,7 +3,7 @@
 :root {
   --background: #373535;
   --foreground: #000000;
-  --aether-primary: #ccff33;
+  --aether-primary: #9c27b0;
   --shape-dark: rgba(255, 255, 255, 0.08);
   --shape-medium: rgba(255, 255, 255, 0.12);
   --shape-light: rgba(255, 255, 255, 0.16);
@@ -39,17 +39,9 @@ body {
   color: var(--foreground);
 }
 
-/* Background with gradient and shapes */
+/* Background with white base and gradient shapes */
 .background-container {
-  background: linear-gradient(135deg, 
-    #667eea 0%, 
-    #764ba2 25%, 
-    #667eea 50%, 
-    #764ba2 75%, 
-    #667eea 100%
-  );
-  background-size: 200% 200%;
-  animation: subtleGradientShift 20s ease infinite;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -269,12 +261,17 @@ body {
   }
 }
 
-/* Main container rectangle - Glass Morphism */
+/* Main container rectangle - Glass Morphism with flowing gradient */
 .main-container {
   background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.1) 0%, 
-    rgba(255, 255, 255, 0.05) 100%
+    #e91e63 0%, 
+    #9c27b0 25%, 
+    #673ab7 50%, 
+    #9c27b0 75%, 
+    #e91e63 100%
   );
+  background-size: 200% 200%;
+  animation: subtleGradientShift 20s ease infinite;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 32px;
@@ -314,17 +311,13 @@ body {
   top: 24px;
   left: 48px;
   z-index: 50;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.15) 0%, 
-    rgba(255, 255, 255, 0.08) 100%
-  );
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
   padding: 12px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation menu above the container */
@@ -335,21 +328,17 @@ body {
   z-index: 50;
   display: flex;
   gap: 16px;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.15) 0%, 
-    rgba(255, 255, 255, 0.08) 100%
-  );
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
   padding: 12px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .nav-item {
-  color: #ffffff;
+  color: #333333;
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
@@ -357,23 +346,23 @@ body {
   border-radius: 8px;
   transition: all 0.3s ease;
   cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .nav-item.active {
-  background-color: rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #000000 !important;
+  border-color: rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -384,15 +373,20 @@ body {
   padding: 48px;
 }
 
-/* Sections below the main container */
+/* Sections below the main container with flowing gradient */
 .info-section {
   margin: 24px;
   margin-bottom: 24px;
   padding: 48px;
   background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.1) 0%, 
-    rgba(255, 255, 255, 0.05) 100%
+    #e91e63 0%, 
+    #9c27b0 25%, 
+    #673ab7 50%, 
+    #9c27b0 75%, 
+    #e91e63 100%
   );
+  background-size: 200% 200%;
+  animation: subtleGradientShift 20s ease infinite;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;

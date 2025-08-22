@@ -155,7 +155,7 @@ export default function Home() {
       {/* Logo positioned above the container */}
       <div className="logo-above-container">
         <Image 
-          src="/logo_white.png" 
+          src="/logo_black.png" 
           alt="Logo" 
           width={logoWidth} 
           height={logoHeight}
@@ -334,19 +334,19 @@ export default function Home() {
         </p>
         <div className="content-grid">
           <div className="info-card">
-            <h3>👟 Footwear</h3>
+            <h3>Footwear</h3>
             <p>Sneakers, shoes, heels, and other footwear (inclduding cowboy boots).</p>
           </div>
           <div className="info-card">
-            <h3>👕 Clothing</h3>
+            <h3>Clothing</h3>
             <p>Premium, designer, streetwear, and performance apparel across women’s and unisex sizing.</p>
           </div>
           <div className="info-card">
-            <h3>👜 Handbags</h3>
+            <h3>Handbags</h3>
             <p>Handbags and small leather items (purses, wallets, etc.).</p>
           </div>
           <div className="info-card">
-            <h3>⌚ Accessories</h3>
+            <h3>Accessories</h3>
             <p>Watches, fine jewelry, and accessories (belts, sunglasses, etc.).</p>
           </div>
         </div>
