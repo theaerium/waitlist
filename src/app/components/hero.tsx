@@ -132,28 +132,28 @@ export default function Hero() {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between h-[calc(100vh-64px)]">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-64px)] py-8 lg:py-0">
           {/* Left side - Cards */}
-          <div className="flex-1 flex items-center justify-center">
+          <div className="flex-1 flex items-center justify-center mb-8 lg:mb-0">
             <SpinningCards />
           </div>
 
           {/* Right side - Text and email input */}
-          <div className="flex-1 max-w-lg pl-8">
-            <div className="space-y-6 mb-8">
-              <h1 className="text-6xl text-gray-900 leading-tight">
+          <div className="flex-1 max-w-lg lg:pl-8 w-full">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight text-center lg:text-left">
                 Out with the old,<br />
                 in with the new
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed text-center lg:text-left">
                 Use your the Aerium Visa card to turn items you don&apos;t use into{' '}
-                <strong className="text-aether-primary text-md">instant buying power.</strong>
+                <strong className="text-aether-primary text-sm sm:text-base md:text-md">instant buying power.</strong>
               </p>
             </div>
 
             {/* Email input */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-6 sm:mb-8">
               <div className="relative">
                 <input
                   type="email"
@@ -165,7 +165,7 @@ export default function Hero() {
                       handleJoinWaitlist();
                     }
                   }}
-                  className="w-full px-0 py-3 text-lg border-b-2 border-gray-300 focus:border-aether-primary focus:outline-none bg-transparent placeholder-gray-400"
+                  className="w-full px-0 py-3 text-base sm:text-lg border-b-2 border-gray-300 focus:border-aether-primary focus:outline-none bg-transparent placeholder-gray-400"
                 />
                 <button 
                   onClick={handleJoinWaitlist}
@@ -173,7 +173,7 @@ export default function Hero() {
                   className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 hover:bg-aether-primary transition-colors disabled:opacity-50"
                 >
                   <svg 
-                    className="w-6 h-6 text-gray-400 hover:text-white transition-colors" 
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 hover:text-white transition-colors" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -190,7 +190,7 @@ export default function Hero() {
               
               {/* Status messages */}
               {status && status !== "success" && status !== "existing" && (
-                <div className={`text-sm ${
+                <div className={`text-xs sm:text-sm ${
                   status.includes("already joined") 
                     ? "text-black" 
                     : "text-red-600"
@@ -201,8 +201,8 @@ export default function Hero() {
 
               {/* Referral link section */}
               {referralLink && (
-                <div className="mt-4 p-4 bg-gray-50 border">
-                  <p className="text-sm font-medium text-gray-700 mb-2">
+                <div className="mt-4 p-3 sm:p-4 bg-gray-50 border">
+                  <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">
                     {isExistingUser 
                       ? "Welcome back! Here's your referral link:" 
                       : "Successfully joined! Here's your referral link:"
@@ -213,16 +213,16 @@ export default function Hero() {
                       You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
                     </p>
                   )}
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-col sm:flex-row items-center gap-2">
                     <input 
                       type="text" 
                       value={referralLink} 
                       readOnly 
-                      className="flex-1 px-3 py-2 text-sm border bg-white"
+                      className="flex-1 px-3 py-2 text-xs sm:text-sm border bg-white w-full"
                     />
                     <button 
                       onClick={copyReferralLink}
-                      className="px-3 py-2 bg-aether-primary text-white  border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-150 text-sm font-medium"
+                      className="px-3 py-2 bg-aether-primary text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-150 text-xs sm:text-sm font-medium w-full sm:w-auto"
                     >
                       Copy
                     </button>
@@ -235,15 +235,15 @@ export default function Hero() {
 
               {/* Referral notification */}
               {referralId && (
-                <div className="text-sm text-black bg-aether-primary px-3 py-2">
+                <div className="text-xs sm:text-sm text-black bg-aether-primary px-3 py-2 text-center lg:text-left">
                   You were invited by a friend! Sign up to get your own referral link.
                 </div>
               )}
             </div>
 
             {/* Bottom text aligned with the text block */}
-            <div>
-              <p className="text-sm text-gray-500 uppercase tracking-wide">
+            <div className="text-center lg:text-left">
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
                 Coming Fall 2025
               </p>
             </div>
