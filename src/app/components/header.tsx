@@ -28,6 +28,13 @@ export default function Header() {
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <header className="bg-white border-b border-black border-1 sticky top-0 z-50">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -43,20 +50,20 @@ export default function Header() {
           {/* Navigation links and button */}
           <div className="flex items-center space-x-4 sm:space-x-6 lg:space-x-8">
             <nav className="hidden sm:flex items-center space-x-4 sm:space-x-6">
-              <a 
-                href="#process" 
+              <button 
+                onClick={() => scrollToSection('process')}
                 className="text-black font-medium uppercase tracking-wide hover:text-gray-700 transition-colors relative group text-xs sm:text-sm"
               >
                 OUR PROCESS
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-400"></span>
-              </a>
-              <a 
-                href="#items" 
+              </button>
+              <button 
+                onClick={() => scrollToSection('items')}
                 className="text-black font-medium uppercase tracking-wide hover:text-gray-700 transition-colors relative group text-xs sm:text-sm"
               >
                 ITEMS WE LOOK FOR
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-400"></span>
-              </a>
+              </button>
             </nav>
             
             <Button 

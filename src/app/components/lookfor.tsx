@@ -48,7 +48,7 @@ export default function LookFor() {
     };
 
     return (
-        <section className="min-h-screen bg-white flex items-start pt-12 sm:pt-16 lg:pt-20 border-t border-black">
+        <section id="items" className="min-h-screen bg-white flex items-start pt-12 sm:pt-16 lg:pt-20 border-t border-black">
             <div className="px-4 sm:px-6 lg:px-8 w-full">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-8 sm:mb-12">

@@ -21,7 +21,7 @@ export default function Process() {
   const CARD_STACK_HEIGHT = CARD_STACK_WIDTH * (3551 / 3840);
 
   return (
-    <section className="min-h-screen bg-white flex items-start pt-12 sm:pt-16 lg:pt-20 border-t border-black pb-12 sm:pb-16 lg:pb-20">
+    <section id="process" className="min-h-screen bg-white flex items-start pt-12 sm:pt-16 lg:pt-20 border-t border-black pb-12 sm:pb-16 lg:pb-20">
       <div className="px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
@@ -48,7 +48,7 @@ export default function Process() {
                   alt="Shipping page" 
                   width={CARD_STACK_WIDTH} 
                   height={CARD_STACK_HEIGHT}
-                  className="w-40 sm:w-48 md:w-56 h-auto"
+                  className="w-56 sm:w-64 md:w-72 lg:w-80 h-auto"
                 />
               </div>
             </div>
@@ -66,7 +66,7 @@ export default function Process() {
                   alt="Aerium card stack" 
                   width={CARD_STACK_WIDTH} 
                   height={CARD_STACK_HEIGHT}
-                  className="w-40 sm:w-48 md:w-56 h-auto"
+                  className="w-56 sm:w-64 md:w-72 lg:w-80 h-auto"
                 />
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Process() {
                   alt="Shipping page" 
                   width={CARD_STACK_WIDTH} 
                   height={CARD_STACK_HEIGHT}
-                  className="w-40 sm:w-48 md:w-56 h-auto"
+                  className="w-56 sm:w-64 md:w-72 lg:w-80 h-auto"
                 />
               </div>
             </div>
