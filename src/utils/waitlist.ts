@@ -158,8 +158,7 @@ export async function getWaitlistCount(): Promise<number> {
     }
 
     const rows = await sheet.getRows();
-    // Subtract 1 if there's a header row, otherwise use the full count
-    return rows.length + 200;
+    return rows.length;
   } catch (error) {
     console.error('Failed to get waitlist count:', error);
     throw error;
