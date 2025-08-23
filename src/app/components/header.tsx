@@ -41,7 +41,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between h-12 sm:h-16">
           {/* Logo and brand name */}
-          <Link href="/new-version" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <div className="flex items-center space-x-2">
               <Image src="/brand/logo.png" alt="Aerium" width={90} height={30} className="w-16 sm:w-20 md:w-auto h-auto" />
             </div>
