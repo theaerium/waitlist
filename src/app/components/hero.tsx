@@ -148,7 +148,7 @@ export default function Hero() {
               
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed text-center lg:text-left">
                 Use your the Aerium Visa card to turn items you don&apos;t use into{' '}
-                <strong className="text-aether-primary text-sm sm:text-base md:text-md">instant buying power.</strong>
+                <strong className="text-aether-primary text-base sm:text-lg md:text-xl">instant buying power.</strong>
               </p>
             </div>
 
