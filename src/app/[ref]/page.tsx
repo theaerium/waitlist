@@ -11,13 +11,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ref } = await params;
   
   return {
-    title: "Aerium - Buy now, pay never",
-    description: "Turn your unused items into instant buying power. It's like getting everything for free.",
+    title: "Aerium | Shop with your closet",
+    description: "Turn your unused items into instant money. It's like getting everything for free.",
     keywords: ["trading", "buying", "selling", "cash", "items", "marketplace"],
     authors: [{ name: "Aerium" }],
     openGraph: {
-      title: "Aerium - Buy now, pay never",
-      description: "Turn your unused items into instant buying power. It's like getting everything for free.",
+      title: "Aerium | Shop with your closet",
+      description: "Turn your unused items into instant money. It's like getting everything for free.",
       url: `https://joinaerium.com/${ref}`,
       siteName: "Aerium",
       images: [
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Aerium - Buy now, pay never",
+          alt: "Aerium | Shop with your closet",
         },
       ],
       locale: "en_US",
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: "Aerium - Buy now, pay never",
+      title: "Aerium | Shop with your closet",
       description: "Turn your unused items into instant buying power. It's like getting everything for free.",
       images: ["/og-image.png"],
       creator: "@aerium",
