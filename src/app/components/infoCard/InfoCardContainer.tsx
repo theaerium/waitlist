@@ -28,7 +28,7 @@ export default function InfoCardContainer() {
         
         <InfoCard
           title="Spend"
-          description="Spend with you Aerium Mastercard anywhere Mastercard is accepted"
+          description="Spend with your Aerium Mastercard anywhere Mastercard is accepted"
           backgroundImage="/content/spend.png"
           type="student"
           onHover={() => handleCardHover(1)}
@@ -55,7 +55,7 @@ export default function InfoCardContainer() {
         
         <InfoCard
           title="Spend"
-          description="Spend with you Aerium Mastercard anywhere Mastercard is accepted"
+          description="Spend with your Aerium Mastercard anywhere Mastercard is accepted"
           backgroundImage="/content/spend.png"
           type="student"
           onHover={() => handleCardHover(1)}
