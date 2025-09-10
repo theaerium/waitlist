@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import SpinningCards from './spinningCards';
 import CardStrip from './cards/CardStrip';
+import RandomCard from './cards/RandomCard';
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -201,15 +202,32 @@ export default function Hero() {
             </div>
 
         {/* Cards section */}
+        <div className="relative h-[200px]">
+          {/* Mobile - Single Card using RandomCard component */}
+          <div className="block lg:hidden flex justify-center items-center h-full w-full pt-24">
+            <RandomCard 
+              className="bg-gradient-to-br from-transparent to-transparent !ml-0"
+              style={{ 
+                background: `linear-gradient(135deg, #667EEA, #667EEACC)`,
+                borderColor: '#667EEA',
+                marginLeft: '0px'
+              }}
+            />
+          </div>
+
+          {/* Desktop - Card Strip */}
+          <div className="hidden lg:block">
             <div
-                style={{
+              style={{
                 perspective: `100000px`,
                 transformStyle: 'preserve-3d',
-                }}
-                className="relative h-[200px]"
+              }}
+              className="relative h-[200px]"
             >
-                <CardStrip />
+              <CardStrip />
             </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
