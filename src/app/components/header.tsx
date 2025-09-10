@@ -43,7 +43,10 @@ export default function Header() {
           {/* Logo and brand name */}
           <Link href="/" className="flex items-center">
             <div className="flex items-center space-x-2">
-              <Image src="/brand/logo.png" alt="Aerium" width={90} height={30} className="w-16 sm:w-20 md:w-auto h-auto" />
+              {/* <Image src="/brand/logo.png" alt="Aerium" width={90} height={30} className="w-16 sm:w-20 md:w-auto h-auto" /> */}
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-tight">
+                AERIUM
+              </h1>
             </div>
           </Link>
 
@@ -61,7 +64,7 @@ export default function Header() {
                 onClick={() => scrollToSection('items')}
                 className="text-black font-medium uppercase tracking-wide hover:text-gray-700 transition-colors relative group text-xs sm:text-sm"
               >
-                ITEMS WE LOOK FOR
+                OUR CURRENCY
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-400"></span>
               </button>
             </nav>

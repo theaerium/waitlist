@@ -4,6 +4,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --aether-primary: #667EEA;
+  --aether-secondary: #00B8D9;
 }
 
 @theme inline {
@@ -12,6 +13,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-aether-primary: var(--aether-primary);
+  --color-aether-secondary: var(--aether-secondary);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	will-change: auto;
 }
 
 body {
@@ -29,4 +38,27 @@ body {
 ::-moz-selection {
   background-color: var(--aether-primary);
   color: var(--foreground);
+}
+
+.hovering-cards:hover {
+	/* transform: rotateX(0); */
+	animation-play-state: paused;
+	animation: scroll-cards 100s infinite;
+}
+
+.hovering-cards {
+	cursor: pointer;
+	/* transform: rotateX(-50deg) rotateY(0deg) rotateZ(-30deg); */
+	transform-origin: 15% 200%;
+	animation: scroll-cards 100s infinite;
+}
+
+@keyframes scroll-cards {
+	0% {
+    /* TODO: Adjust the z angle, initially it is -30deg for both 0 and 100% */
+		transform: rotateX(-50deg) rotateY(-15deg) rotateZ(-30deg) translateX(0%);
+	}
+	100% {
+		transform: rotateX(-50deg) rotateY(-15deg) rotateZ(-30deg) translateX(-50%);
+	}
 }

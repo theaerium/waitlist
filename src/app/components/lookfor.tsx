@@ -1,126 +1,133 @@
 "use client"
 
 import Image from 'next/image';
-import Item, { ItemProps } from './item';
-import { useState } from 'react';
 
-// Items list for easy customization
-const ITEMS: ItemProps[] = [
+// Split methods data
+const SPLIT_METHODS = [
     {
-        image: ['/items/margeila.png', '/items/tabby_loafers.png', '/items/cowboy.png'],
-        title: 'Footwear',
-        description: 'Sneakers, shoes, heels, and other footwear (including cowboy boots)',
+        title: "SPLIT EQUALLY",
+        subtitle: "one bill, equal bites",
+        image: "/items/chanel.png",
+        position: "top-left"
     },
     {
-        image: ['/items/aritzia_pants.webp', '/items/babaton_dress.png', '/items/beautiful.png',],
-        title: 'Clothing',
-        description: 'Premium, designer, streetwear, and performance apparel across all sizes',
+        title: "BY INDIVIDUAL", 
+        subtitle: "this one's on you, that one's on me",
+        image: "/items/chanel.png",
+        position: "top-right"
     },
     {
-        image: ['/items/gucci_vintage.jpg', '/items/what.jpg', '/items/chanel.webp'],
-        title: 'Handbags',
-        description: 'Handbags and small leather items (wallets, purses, etc.)',
+        title: "BY PERCENTAGE",
+        subtitle: "slice it by % nice and neat", 
+        image: "/items/chanel.png",
+        position: "center"
     },
     {
-        image: ['/items/cartier.jpg', '/items/mk_watch.png', '/items/chanel_glasses.webp',],
-        title: 'Accessories',
-        description: 'Watches, fine jewelry, and other accessories (sunglasses, belts, etc.)',
+        title: "BY ADJUSTMENT",
+        subtitle: "add a little, shave a little",
+        image: "/items/chanel.png",
+        position: "bottom-left"
     },
+    {
+        title: "BY SHARES",
+        subtitle: "2 shares for dad, 1 for kid (you get it)",
+        image: "/items/chanel.png",
+        position: "bottom-right"
+    }
 ];
 
 export default function LookFor() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => 
-            prevIndex === ITEMS.length - 1 ? 0 : prevIndex + 1
-        );
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => 
-            prevIndex === 0 ? ITEMS.length - 1 : prevIndex - 1
-        );
-    };
-
-    const goToSlide = (index: number) => {
-        setCurrentIndex(index);
-    };
-
     return (
-        <section id="items" className="min-h-screen bg-white flex items-start pt-12 sm:pt-16 lg:pt-20 border-t border-black">
-            <div className="px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-7xl mx-auto">
-                    <div className="mb-8 sm:mb-12">
-                        <h2 className="text-xs sm:text-sm text-black uppercase tracking-wide mb-2 sm:mb-4">
-                            What we look for
-                        </h2>
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black leading-tight">
-                            Footwear, clothing, and everything in between
-                        </h1>
-                    </div>
+        <section id="items" className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ backgroundColor: '#185D40' }}>
+            {/* Grid pattern background */}
+            <div className="absolute inset-0 opacity-10">
+                <div className="w-full h-full" style={{
+                    backgroundImage: `
+                        linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+                    `,
+                    backgroundSize: '20px 20px'
+                }}></div>
+            </div>
 
-                    {/* Navigation Buttons - Top */}
-                    <div className="flex items-center mb-6 sm:mb-8">
-                        <button
-                            onClick={prevSlide}
-                            className="bg-white border border-black text-white w-8 h-8 sm:w-10 sm:h-10 mr-2 flex items-center justify-center hover:bg-aether-primary/10 transition-colors"
-                            aria-label="Previous slide"
-                        >
-                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={nextSlide}
-                            className="bg-white border border-black text-white w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center hover:bg-aether-primary/10 transition-colors"
-                            aria-label="Next slide"
-                        >
-                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen">
+                {/* Split Equally - Top Left with rotation */}
+                <div className="absolute top-8 left-8 lg:top-16 lg:left-16 transform -rotate-2">
+                    <div className="mb-3">
+                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform rotate-1">one bill, equal bites</p>
+                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform -rotate-1">CLOTHING</h3>
                     </div>
-
-                    {/* Carousel */}
-                    <div className="relative mb-8 sm:mb-12">
-                        <div className="flex overflow-hidden">
-                            <div 
-                                className="flex transition-transform duration-500 ease-in-out"
-                                style={{ 
-                                    transform: `translateX(-${currentIndex * (100 / ITEMS.length)}%)`,
-                                    width: `${ITEMS.length * 100}%`
-                                }}
-                            >
-                                {ITEMS.map((item, index) => (
-                                    <div 
-                                        key={index} 
-                                        className="flex justify-center px-2 sm:px-4"
-                                        style={{ width: `${100 / ITEMS.length}%` }}
-                                    >
-                                        <div className="w-64 sm:w-72 md:w-80">
-                                            <Item {...item} />
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                    <div className="w-64 h-64 lg:w-96 lg:h-96 relative transform rotate-3">
+                        <Image
+                            src="/items/shirt.png"
+                            alt="Clothing"
+                            fill
+                            className="object-cover rounded-lg"
+                        />
                     </div>
+                </div>
 
-                    {/* Pagination Dots */}
-                    <div className="flex justify-center space-x-1 sm:space-x-2">
-                        {ITEMS.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => goToSlide(index)}
-                                className={`transition-all duration-300 ${
-                                    index === currentIndex 
-                                        ? 'w-4 h-1.5 sm:w-6 sm:h-2 bg-black' 
-                                        : 'w-1.5 h-1.5 sm:w-2 sm:h-2 bg-black opacity-50 hover:opacity-75'
-                                }`}
-                                aria-label={`Go to slide ${index + 1}`}
-                            />
-                        ))}
+                {/* By Individual - Top Right with rotation */}
+                <div className="absolute top-12 right-8 lg:top-20 lg:right-16 transform rotate-1">
+                    <div className="mb-3">
+                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform -rotate-1">this one's on you, that one's on me</p>
+                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform rotate-2">ELECTRONICS</h3>
+                    </div>
+                    <div className="w-48 h-48 lg:w-72 lg:h-72 relative transform -rotate-2">
+                        <Image
+                            src="/items/mac.png"
+                            alt="Electronics"
+                            fill
+                            className="object-cover rounded-lg"
+                        />
+                    </div>
+                </div>
+
+                {/* By Percentage - Center with slight offset */}
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-1">
+                    <div className="mb-3 text-center">
+                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">BEAUTY PRODUCTS</h3>
+                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">slice it by % nice and neat</p>
+                    </div>
+                    <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform rotate-2">
+                        <Image
+                            src="/items/perfume.png"
+                            alt="By Percentage"
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                </div>
+
+                {/* By Adjustment - Bottom Left with rotation */}
+                <div className="absolute bottom-24 left-8 lg:bottom-32 lg:left-16 transform rotate-2">
+                    <div className="mb-3">
+                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">ACCESSORIES</h3>
+                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">add a little, shave a little</p>
+                    </div>
+                        <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform -rotate-3">
+                        <Image
+                            src="/items/watch.png"
+                            alt="Accessories"
+                            fill
+                            className="object-cover rounded-lg"
+                        />
+                    </div>
+                </div>
+
+                {/* By Shares - Bottom Right with rotation */}
+                <div className="absolute bottom-12 right-8 lg:bottom-20 lg:right-16 transform -rotate-1">
+                    <div className="mb-3">
+                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform rotate-1">BAGS & PURSES</h3>
+                        <p className="text-white text-xs lg:text-sm font-sans transform -rotate-1">2 shares for dad, 1 for kid (you get it)</p>
+                    </div>
+                    <div className="w-32 h-32 lg:w-48 lg:h-48 relative transform rotate-2">
+                        <Image
+                            src="/items/chanel.png"
+                            alt="By Shares"
+                            fill
+                            className="object-cover rounded-lg"
+                        />
                     </div>
                 </div>
             </div>

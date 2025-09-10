@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import SpinningCards from './spinningCards';
-import CardStrip from './cards/CardStrip';
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -131,29 +130,30 @@ export default function Hero() {
   };
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 overflow-hidden relative h-screen">
-      {/* Grid pattern background */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full" style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '20px 20px'
-        }}></div>
-      </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto max-h-[600px]">
-        {/* Main heading and subheading */}
-        <div className="text-center mb-8 pt-24">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
-            Your new favourite way to spend
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
-            Deposit items you no longer want for money you can feel good about spending.
-        </p>
-        {/* Email input */}
-        <div className="space-y-4 max-w-3xl mx-auto mt-12">
+    <div className="px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[calc(100vh-64px)] py-8 lg:py-0">
+          {/* Left side - Cards */}
+          <div className="flex-1 flex items-center justify-center mb-8 lg:mb-0">
+            <SpinningCards />
+          </div>
+
+          {/* Right side - Text and email input */}
+          <div className="flex-1 max-w-lg lg:pl-8 w-full">
+            <div className="space-y-4 sm:space-y-6 mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 leading-tight text-center lg:text-left">
+                Out with the old,<br />
+                in with the new
+              </h1>
+              
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed text-center lg:text-left">
+                Use your the Aerium Visa card to turn items you don&apos;t use into{' '}
+                <strong className="text-aether-primary text-base sm:text-lg md:text-xl">instant cash.</strong>
+              </p>
+            </div>
+
+            {/* Email input */}
+            <div className="space-y-4 mb-6 sm:mb-8">
               <div className="relative">
                 <input
                   type="email"
@@ -241,16 +241,13 @@ export default function Hero() {
               )}
             </div>
 
-        {/* Cards section */}
-            <div
-                style={{
-                perspective: `100000px`,
-                transformStyle: 'preserve-3d',
-                }}
-                className="relative h-[200px]"
-            >
-                <CardStrip />
+            {/* Bottom text aligned with the text block */}
+            <div className="text-center lg:text-left">
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wide">
+                Coming Fall 2025
+              </p>
             </div>
+          </div>
         </div>
       </div>
     </div>
