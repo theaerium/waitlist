@@ -141,14 +141,100 @@ export default function LookFor() {
                 </div>
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen">
-                {/* Split Equally - Top Left with rotation */}
-                <div className="absolute top-8 left-8 lg:top-16 lg:left-16 transform -rotate-2">
-                    <div className="mb-3">
-                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform rotate-1">Shirts, shoes, and pants</p>
-                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform -rotate-1">CLOTHING</h3>
+            {/* Mobile Layout - Stacked List */}
+            <div className="block lg:hidden relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 py-8">
+                <div className="space-y-8">
+                    {/* CLOTHING */}
+                    <div className="flex items-center space-x-6">
+                        <div className="w-24 h-24 relative flex-shrink-0">
+                            <Image
+                                src="/items/shirt.png"
+                                alt="Clothing"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="text-white text-lg font-bold mb-1">CLOTHING</h3>
+                            <p className="text-white text-sm">Shirts, shoes, and pants</p>
+                        </div>
                     </div>
-                    <div className="w-64 h-64 lg:w-96 lg:h-96 relative transform rotate-3">
+
+                    {/* ELECTRONICS */}
+                    <div className="flex items-center space-x-6">
+                        <div className="w-24 h-24 relative flex-shrink-0">
+                            <Image
+                                src="/items/mac.png"
+                                alt="Electronics"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="text-white text-lg font-bold mb-1">ELECTRONICS</h3>
+                            <p className="text-white text-sm">Ipads, laptops, and phones</p>
+                        </div>
+                    </div>
+
+                    {/* BEAUTY PRODUCTS */}
+                    <div className="flex items-center space-x-6">
+                        <div className="w-24 h-24 relative flex-shrink-0">
+                            <Image
+                                src="/items/perfume.png"
+                                alt="Beauty Products"
+                                fill
+                                className="object-contain"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="text-white text-lg font-bold mb-1">BEAUTY PRODUCTS</h3>
+                            <p className="text-white text-sm">Unopened makeup, skincare, and perfumes</p>
+                        </div>
+                    </div>
+
+                    {/* ACCESSORIES */}
+                    <div className="flex items-center space-x-6">
+                        <div className="w-24 h-24 relative flex-shrink-0">
+                            <Image
+                                src="/items/watch.png"
+                                alt="Accessories"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="text-white text-lg font-bold mb-1">ACCESSORIES</h3>
+                            <p className="text-white text-sm">Watches, jewelry, and other small items</p>
+                        </div>
+                    </div>
+
+                    {/* BAGS & PURSES */}
+                    <div className="flex items-center space-x-6">
+                        <div className="w-24 h-24 relative flex-shrink-0">
+                            <Image
+                                src="/items/bag.png"
+                                alt="Bags & Purses"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                        <div>
+                            <h3 className="text-white text-lg font-bold mb-1">BAGS & PURSES</h3>
+                            <p className="text-white text-sm">Bags, purses, and clutches</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* Desktop Layout - Scattered Design */}
+            <div className="hidden lg:block relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen">
+                {/* Split Equally - Top Left with rotation */}
+                <div className="absolute top-16 left-16 transform -rotate-2">
+                    <div className="mb-3">
+                        <p className="text-white text-sm font-sans mb-1 transform rotate-1">Shirts, shoes, and pants</p>
+                        <h3 className="text-white text-3xl font-serif font-bold transform -rotate-1">CLOTHING</h3>
+                    </div>
+                    <div className="w-96 h-96 relative transform rotate-3">
                         <Image
                             src="/items/shirt.png"
                             alt="Clothing"
@@ -159,12 +245,12 @@ export default function LookFor() {
                 </div>
 
                 {/* By Individual - Top Right with rotation */}
-                <div className="absolute top-12 right-8 lg:top-20 lg:right-16 transform rotate-1">
+                <div className="absolute top-20 right-16 transform rotate-1">
                     <div className="mb-3">
-                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform -rotate-1">Ipads, laptops, and phones</p>
-                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform rotate-2">ELECTRONICS</h3>
+                        <p className="text-white text-sm font-sans mb-1 transform -rotate-1">Ipads, laptops, and phones</p>
+                        <h3 className="text-white text-3xl font-serif font-bold transform rotate-2">ELECTRONICS</h3>
                     </div>
-                    <div className="w-48 h-48 lg:w-72 lg:h-72 relative transform -rotate-2">
+                    <div className="w-72 h-72 relative transform -rotate-2">
                         <Image
                             src="/items/mac.png"
                             alt="Electronics"
@@ -177,10 +263,10 @@ export default function LookFor() {
                 {/* By Percentage - Center with slight offset */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-1">
                     <div className="mb-3 text-center">
-                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">BEAUTY PRODUCTS</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">Unopened makeup, skincare, and perfumes</p>
+                        <h3 className="text-white text-3xl font-serif font-bold mb-1 transform -rotate-1">BEAUTY PRODUCTS</h3>
+                        <p className="text-white text-sm font-sans transform rotate-1">Unopened makeup, skincare, and perfumes</p>
                     </div>
-                    <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform rotate-2">
+                    <div className="w-64 h-64 relative transform rotate-2">
                         <Image
                             src="/items/perfume.png"
                             alt="By Percentage"
@@ -191,12 +277,12 @@ export default function LookFor() {
                 </div>
 
                 {/* By Adjustment - Bottom Left with rotation */}
-                <div className="absolute bottom-24 left-8 lg:bottom-32 lg:left-16 transform rotate-2">
+                <div className="absolute bottom-32 left-16 transform rotate-2">
                     <div className="mb-3">
-                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">ACCESSORIES</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">Watches, jewelry, and other small items</p>
+                        <h3 className="text-white text-3xl font-serif font-bold mb-1 transform -rotate-1">ACCESSORIES</h3>
+                        <p className="text-white text-sm font-sans transform rotate-1">Watches, jewelry, and other small items</p>
                     </div>
-                        <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform -rotate-3">
+                        <div className="w-64 h-64 relative transform -rotate-3">
                         <Image
                             src="/items/watch.png"
                             alt="Accessories"
@@ -207,12 +293,12 @@ export default function LookFor() {
                 </div>
 
                 {/* By Shares - Bottom Right with rotation */}
-                <div className="absolute bottom-12 right-8 lg:bottom-20 lg:right-16 transform -rotate-1">
+                <div className="absolute bottom-20 right-16 transform -rotate-1">
                     <div className="mb-3">
-                        <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform rotate-1">BAGS & PURSES</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform -rotate-1">Bags, purses, and clutches</p>
+                        <h3 className="text-white text-3xl font-serif font-bold mb-1 transform rotate-1">BAGS & PURSES</h3>
+                        <p className="text-white text-sm font-sans transform -rotate-1">Bags, purses, and clutches</p>
                     </div>
-                    <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform rotate-2">
+                    <div className="w-64 h-64 relative transform rotate-2">
                         <Image
                             src="/items/bag.png"
                             alt="By Shares"
