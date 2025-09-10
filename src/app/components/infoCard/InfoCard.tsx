@@ -91,13 +91,14 @@ export default function InfoCard({
   // Desktop layout - animated cards
   const cardWidthClass = shouldExpand ? 'w-4/5 sm:w-3/5' : 'w-[calc(40%+4%)] sm:w-[calc(33.333%+4%)]';
   const cardPositionClass = position === 'left' ? 'left-2 mr-2 sm:mr-4' : 'right-2 ml-2 sm:ml-4';
+  const cardZIndexClass = position === 'left' ? 'z-20' : 'z-10';
   const titleOpacityClass = 'opacity-100'; // Title always visible
   const subtextOpacityClass = shouldExpand ? 'opacity-100' : 'opacity-0'; // Only subtext fades
 
   return (
     <Link href={link} className="block">
       <div
-        className={`absolute top-0 bottom-0 w- transition-all duration-500 ease-out overflow-hidden p-2 cursor-pointer ${cardWidthClass} ${cardPositionClass}`}
+        className={`absolute top-0 bottom-0 w- transition-all duration-500 ease-out overflow-hidden p-2 cursor-pointer ${cardWidthClass} ${cardPositionClass} ${cardZIndexClass}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
