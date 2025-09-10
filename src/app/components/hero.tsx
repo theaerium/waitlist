@@ -198,47 +198,6 @@ export default function Hero() {
                   {status}
                 </div>
               )}
-
-              {/* Referral link section */}
-              {referralLink && (
-                <div className="mt-4 p-3 sm:p-4 bg-gray-50 border">
-                  <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                    {isExistingUser 
-                      ? "Welcome back! Here's your referral link:" 
-                      : "Successfully joined! Here's your referral link:"
-                    }
-                  </p>
-                  {isExistingUser && numReferrals > 0 && (
-                    <p className="text-xs text-gray-600 mb-2">
-                      You&apos;ve referred {numReferrals} {numReferrals === 1 ? 'person' : 'people'} so far!
-                    </p>
-                  )}
-                  <div className="flex flex-col sm:flex-row items-center gap-2">
-                    <input 
-                      type="text" 
-                      value={referralLink} 
-                      readOnly 
-                      className="flex-1 px-3 py-2 text-xs sm:text-sm border bg-white w-full"
-                    />
-                    <button 
-                      onClick={copyReferralLink}
-                      className="px-3 py-2 bg-aether-primary text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-none transition-all duration-150 text-xs sm:text-sm font-medium w-full sm:w-auto"
-                    >
-                      Copy
-                    </button>
-                  </div>
-                  <p className="text-xs text-gray-500 mt-2">
-                    Share this link to get early access.
-                  </p>
-                </div>
-              )}
-
-              {/* Referral notification */}
-              {referralId && (
-                <div className="text-xs sm:text-sm text-black bg-aether-primary px-3 py-2 text-center lg:text-left">
-                  You were invited by a friend! Sign up to get your own referral link.
-                </div>
-              )}
             </div>
 
         {/* Cards section */}
