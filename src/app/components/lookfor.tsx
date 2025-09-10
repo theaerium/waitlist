@@ -50,11 +50,102 @@ export default function LookFor() {
                 }}></div>
             </div>
 
+            {/* Scattered Benjamin images */}
+            <div className="absolute inset-0 z-0">
+                {/* Benjamin 1 - Top Left */}
+                <div className="absolute top-20 left-20 transform rotate-12 opacity-20">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={180}
+                        height={90}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 2 - Top Right */}
+                <div className="absolute top-32 right-32 transform -rotate-8 opacity-15">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={225}
+                        height={112}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 3 - Middle Left */}
+                <div className="absolute top-1/2 left-16 transform rotate-6 opacity-25">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={157}
+                        height={78}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 4 - Middle Right */}
+                <div className="absolute top-1/3 right-20 transform -rotate-12 opacity-18">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={202}
+                        height={101}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 5 - Bottom Left */}
+                <div className="absolute bottom-32 left-40 transform rotate-3 opacity-22">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={190}
+                        height={95}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 6 - Bottom Right */}
+                <div className="absolute bottom-20 right-16 transform -rotate-5 opacity-20">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={168}
+                        height={84}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 7 - Center */}
+                <div className="absolute top-2/3 left-1/2 transform translate-x-8 rotate-9 opacity-16">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={145}
+                        height={72}
+                        className="object-contain"
+                    />
+                </div>
+
+                {/* Benjamin 8 - Top Center */}
+                <div className="absolute top-40 left-1/2 transform -translate-x-12 -rotate-4 opacity-19">
+                    <Image
+                        src="/items/benjamin.png"
+                        alt="Benjamin"
+                        width={213}
+                        height={106}
+                        className="object-contain"
+                    />
+                </div>
+            </div>
+
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen">
                 {/* Split Equally - Top Left with rotation */}
                 <div className="absolute top-8 left-8 lg:top-16 lg:left-16 transform -rotate-2">
                     <div className="mb-3">
-                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform rotate-1">one bill, equal bites</p>
+                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform rotate-1">Shirts, shoes, and pants</p>
                         <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform -rotate-1">CLOTHING</h3>
                     </div>
                     <div className="w-64 h-64 lg:w-96 lg:h-96 relative transform rotate-3">
@@ -70,7 +161,7 @@ export default function LookFor() {
                 {/* By Individual - Top Right with rotation */}
                 <div className="absolute top-12 right-8 lg:top-20 lg:right-16 transform rotate-1">
                     <div className="mb-3">
-                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform -rotate-1">this one's on you, that one's on me</p>
+                        <p className="text-white text-xs lg:text-sm font-sans mb-1 transform -rotate-1">Ipads, laptops, and phones</p>
                         <h3 className="text-white text-xl lg:text-3xl font-serif font-bold transform rotate-2">ELECTRONICS</h3>
                     </div>
                     <div className="w-48 h-48 lg:w-72 lg:h-72 relative transform -rotate-2">
@@ -87,7 +178,7 @@ export default function LookFor() {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-1">
                     <div className="mb-3 text-center">
                         <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">BEAUTY PRODUCTS</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">slice it by % nice and neat</p>
+                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">Unopened makeup, skincare, and perfumes</p>
                     </div>
                     <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform rotate-2">
                         <Image
@@ -103,7 +194,7 @@ export default function LookFor() {
                 <div className="absolute bottom-24 left-8 lg:bottom-32 lg:left-16 transform rotate-2">
                     <div className="mb-3">
                         <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform -rotate-1">ACCESSORIES</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">add a little, shave a little</p>
+                        <p className="text-white text-xs lg:text-sm font-sans transform rotate-1">Watches, jewelry, and other small items</p>
                     </div>
                         <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform -rotate-3">
                         <Image
@@ -119,11 +210,11 @@ export default function LookFor() {
                 <div className="absolute bottom-12 right-8 lg:bottom-20 lg:right-16 transform -rotate-1">
                     <div className="mb-3">
                         <h3 className="text-white text-xl lg:text-3xl font-serif font-bold mb-1 transform rotate-1">BAGS & PURSES</h3>
-                        <p className="text-white text-xs lg:text-sm font-sans transform -rotate-1">2 shares for dad, 1 for kid (you get it)</p>
+                        <p className="text-white text-xs lg:text-sm font-sans transform -rotate-1">Bags, purses, and clutches</p>
                     </div>
-                    <div className="w-32 h-32 lg:w-48 lg:h-48 relative transform rotate-2">
+                    <div className="w-48 h-48 lg:w-64 lg:h-64 relative transform rotate-2">
                         <Image
-                            src="/items/chanel.png"
+                            src="/items/bag.png"
                             alt="By Shares"
                             fill
                             className="object-cover rounded-lg"

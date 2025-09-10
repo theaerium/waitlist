@@ -16,52 +16,52 @@ export default function InfoCardContainer() {
       <div className="block lg:hidden space-y-4">
         <InfoCard
           title="Deposit"
-          description="Deposit pictures of items you’re ready to part with"
-          backgroundImage="/content/student.png"
+          description="Deposit pictures of items you're ready to part with"
+          backgroundImage="/content/deposit.png"
           type="mentor"
           onHover={() => handleCardHover(0)}
           isExpanded={false}
           position="left"
-          link="/students"
+          link="/"
           isMobile={true}
         />
         
         <InfoCard
           title="Spend"
           description="Spend with you Aerium Mastercard anywhere Mastercard is accepted"
-          backgroundImage="/content/professional.png"
+          backgroundImage="/content/spend.png"
           type="student"
           onHover={() => handleCardHover(1)}
           isExpanded={false}
           position="right"
-          link="/professionals"
+          link="/"
           isMobile={true}
         />
       </div>
 
       {/* Desktop Layout - Animated Cards */}
-      <div className="hidden lg:block relative h-96 rounded-2xl overflow-hidden">
+      <div className="hidden lg:block relative h-[500px] overflow-hidden">
         <InfoCard
           title="Deposit"
           description="Deposit pictures of items you’re ready to part with"
-          backgroundImage="/content/student.png"
+          backgroundImage="/content/deposit.png"
           type="mentor"
           onHover={() => handleCardHover(0)}
           isExpanded={lastHoveredIndex === 0}
           position="left"
-          link="/students"
+          link="/"
           isMobile={false}
         />
         
         <InfoCard
           title="Spend"
           description="Spend with you Aerium Mastercard anywhere Mastercard is accepted"
-          backgroundImage="/content/professional.png"
+          backgroundImage="/content/spend.png"
           type="student"
           onHover={() => handleCardHover(1)}
           isExpanded={lastHoveredIndex === 1}
           position="right"
-          link="/professionals"
+          link="/"
           isMobile={false}
         />
       </div>

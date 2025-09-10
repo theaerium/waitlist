@@ -14,7 +14,7 @@ const Card = ({ id, cardNumber, className, style, cvv, expirationDate }: CardPro
 			style={style}
 		>
 			<div id="card-inner" className="font-space-mono align-left">
-				<p className="text-sm text-white text-left">aerium</p>
+				<p className="text-sm text-white text-left">AERIUM</p>
 				<div className="absolute bottom-6">
 					<div className="flex space-x-2">
 						<p className="text-[10px] text-white">{expirationDate}</p>

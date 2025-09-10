@@ -47,18 +47,18 @@ export default function InfoCard({
   if (isMobile) {
     return (
       <Link href={link} className="block">
-        <div className="relative h-48 rounded-lg overflow-hidden">
+        <div className="relative h-64 overflow-hidden">
           {/* Background Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center rounded-lg"
+            className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
           
           {/* Overlay for readability */}
           <div className={`absolute inset-0 transition-opacity duration-500 ${
             type === 'student' 
-              ? 'bg-gradient-to-br from-blue-600/80 via-blue-500/80 to-gray-700/80' 
-              : 'bg-black/60'
+              ? 'bg-gradient-to-br from-blue-600/40 via-blue-500/60 to-gray-700/60' 
+              : 'bg-black/30'
           } opacity-100`} />
 
           {/* Content */}
@@ -97,21 +97,21 @@ export default function InfoCard({
   return (
     <Link href={link} className="block">
       <div
-        className={`absolute top-0 bottom-0 w- transition-all rounded-lg duration-500 ease-out overflow-hidden p-2 cursor-pointer ${cardWidthClass} ${cardPositionClass}`}
+        className={`absolute top-0 bottom-0 w- transition-all duration-500 ease-out overflow-hidden p-2 cursor-pointer ${cardWidthClass} ${cardPositionClass}`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center rounded-lg"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
         
         {/* Overlay for readability */}
         <div className={`absolute inset-0 transition-opacity duration-500 ${
           type === 'student' 
-            ? 'bg-gradient-to-br from-blue-600/80 via-blue-500/80 to-gray-700/80' 
-            : 'bg-black/60'
+            ? 'bg-gradient-to-br from-blue-600/40 via-blue-500/40 to-gray-700/40' 
+            : 'bg-black/30'
         } ${shouldExpand ? 'opacity-100' : 'opacity-70'}`} />
 
         {/* Content */}
@@ -123,7 +123,7 @@ export default function InfoCard({
           {/* Spacer to push subtext to bottom */}
           <div className="flex-grow" />
           
-          <p className={`mt-auto pt-6 sm:pt-8 lg:pt-10 text-sm sm:text-base transition-all duration-500 ${subtextOpacityClass} ${type === 'student' ? 'text-white/90 pl-8 sm:pl-12 lg:pl-16' : 'text-white/90'}`}>
+          <p className={`mt-auto pt-6 sm:pt-8 lg:pt-10 text-sm sm:text-base transition-all duration-500 font-bold ${subtextOpacityClass} ${type === 'student' ? 'text-white/90' : 'text-white/90'}`}>
             {description}
           </p>
           
