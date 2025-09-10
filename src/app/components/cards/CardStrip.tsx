@@ -34,7 +34,7 @@ const CardStrip = React.memo(() => {
 			>
 				<div className="m-auto h-[50px] w-[500px] rounded-full bg-white opacity-10 blur-3xl"></div>
 			</motion.div>
-			<div className="hovering-cards absolute mt-[500px] flex space-x-8 transition-all duration-500 md:mt-[-50px]">
+			<div className="hovering-cards absolute mt-[500px] flex space-x-52 transition-all duration-500 md:mt-[-50px]">
 				{cards}
 			</div>
 		</>
