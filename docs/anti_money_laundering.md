@@ -38,4 +38,4 @@ Last updated: September 22, 2025
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's full terms of service agreements is available at [joinaerium.com/legal/terms-of-service](joinaerium.com/legal/terms-of-service).
+Aerium's full terms of service agreements is available at [Aerium Terms of Service](/legal/terms-of-service).

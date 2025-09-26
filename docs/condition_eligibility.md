@@ -2,7 +2,7 @@
 
 Last updated: September 22, 2025
 
-These guidelines define what you can deposit on Aerium and the minimum condition standards. They work alongside our [Terms of Service](joinaerium.com/legal/terms-of-service), [Privacy Policy](joinaerium.com/legal/privacy-policy), [Photo Guidlines](joinaerium.com/legal/photo-guidelines), and [Anti-Money Laundering policy](joinaerium.com/legal/anti-money-laundering).
+These guidelines define what you can deposit on Aerium and the minimum condition standards. They work alongside our [Terms of Service](/legal/terms-of-service), [Privacy Policy](/legal/privacy-policy), [Photo Guidlines](/legal/photo-guidelines), and [Anti-Money Laundering policy](/legal/anti-money-laundering).
 
 ### What’s eligible now
 - Clothing: tops, bottoms, dresses, outerwear, activewear, footwear.
@@ -44,7 +44,7 @@ These guidelines define what you can deposit on Aerium and the minimum condition
 - Check and disclose expiry dates where printed. Expired or near‑expiry items may be rejected.
 
 ### Photos are required
-- Follow the **[Photo Guidelines](joinaerium.com/legal/photo-guidelines)**
+- Follow the **[Photo Guidelines](/legal/photo-guidelines)**
 
 ### We may decline or reverse a deposit
 - Aerium may refuse or reverse deposits that violate these rules, appear unsafe or inauthentic, fail photo/anti‑fraud checks, or present legal/compliance risk.
@@ -55,4 +55,4 @@ These guidelines define what you can deposit on Aerium and the minimum condition
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's full terms of service agreements is available at [joinaerium.com/legal/terms-of-service](joinaerium.com/legal/terms-of-service).
+Aerium's full terms of service agreements is available at [Aerium Terms of Service](/legal/terms-of-service).

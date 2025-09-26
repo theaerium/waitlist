@@ -21,9 +21,9 @@ Last updated: September 22, 2025
 - Comply with law, card network and banking‑partner requirements, and enforce our Terms.
 
 ### Processing of photos
-- We may read embedded EXIF timestamps to verify photos comply with [Aerium photo guidlines](joinaerium.com/legal/photo-guidelines).
-- We may compute and store image fingerprints to verify photos comply with [Aerium photo guidlines](joinaerium.com/legal/photo-guidelines).
-- We may use third‑party (e.g. Google, SightEngine) tools to verify photos comply with [Aerium photo guidlines](joinaerium.com/legal/photo-guidelines).
+- We may read embedded EXIF timestamps to verify photos comply with [Aerium Photo Guidelines](/legal/photo-guidelines).
+- We may compute and store image fingerprints to verify photos comply with [Aerium Photo Guidelines](/legal/photo-guidelines).
+- We may use third‑party (e.g. Google, SightEngine) tools to verify photos comply with [Aerium Photo Guidelines](/legal/photo-guidelines).
 
 ### Sharing with third parties
 - Authentication and security: Stytch (account/session); fraud tools and content safety vendors.
@@ -59,4 +59,4 @@ To make a request, contact us through the in-app support chat or at the email be
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's full terms of service agreements is available at [joinaerium.com/legal/terms-of-service](joinaerium.com/legal/terms-of-service).
+Aerium's full terms of service agreements is available at [Aerium Terms of Serice](/legal/terms-of-service).

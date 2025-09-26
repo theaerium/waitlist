@@ -34,10 +34,10 @@ Aerium lets you deposit eligible items (e.g., clothing, accessories, footwear, b
 * **Your promises.** When you deposit an item, you represent and warrant that:
 
   * The item is authentic, accurately described, and not stolen, counterfeit, illegal, recalled, or otherwise prohibited.
-  * The item and photos meet our **[Condition & Eligibility Guidelines](joinaerium.com/legal/codition-and-elegibility-guidelines)** and **[Photo Guidlines](joinaerium.com/legal/photo-guidelines)** (published in the app/website and updated from time to time).
+  * The item and photos meet our **[Condition & Eligibility Guidelines](/legal/condition-eligibility)** and **[Photo Guidelines](/legal/photo-guidelines)** (published in the app/website and updated from time to time).
   * You accurately describe the item's condition and quality; deliberate misrepresentation (including overstating condition, omitting defects, or using deceptive or edited photos) **constitutes fraud** under these Terms.
 * **Evaluation & Spendable Value.** Aerium (or our partners) may review your item information and assign a **Spendable Value**. This value is an advance of funds made available for prepaid card use, separate from the ultimate sale price. You are not entitled to the difference in spendable value and ultimate sales price. Aerium may adjust or revoke a Spendable Value if we discover errors, suspected fraud, or ineligible items.
-* **Eligibility updates.** Aerium may modify or discontinue what qualifies as an eligible item and may update the **[Condition & Eligibility Guidelines](joinaerium.com/legal/codition-and-elegibility-guidelines)** and **[Photo Guidlines](joinaerium.com/legal/photo-guidelines)** at any time **without prior notice**, effective upon posting in the app or website. For items already deposited but not yet sold, Aerium may cancel listings, reverse Spendable Value, and return or require return of items that become ineligible.
+* **Eligibility updates.** Aerium may modify or discontinue what qualifies as an eligible item and may update the **[Condition & Eligibility Guidelines](/legal/condition-eligibility)** and **[Photo Guidelines](/legal/photo-guidelines)** at any time **without prior notice**, effective upon posting in the app or website. For items already deposited but not yet sold, Aerium may cancel listings, reverse Spendable Value, and return or require return of items that become ineligible.
 * **Holding period.** Beginning **6 hours** after an item is deposited, you **authorize Aerium** to list, market, and sell the item. Aerium may adjust this timeframe with prior notice.
 * **Right to withdraw items.** Before an item is sold, you may withdraw it from Aerium via the app. Once an item is sold, you can no longer withdraw it and must ship it per Section 8.
 * **Title & risk.** You retain title to an item until it is sold or it's value spent, except as otherwise stated in these Terms. Risk of loss passes to the carrier when you tender the package using the provided label.
@@ -77,7 +77,7 @@ Aerium may investigate, place holds, freeze accounts, and report activity to par
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's anti-money laundeirng (AML) policies are outlined in the **[Aerium Anti-Money Laundering Policy](joinaerium.com/legal/anti-money-laundering)
+Our anti-money laundeirng (AML) policies are outlined in the **[Aerium Anti-Money Laundering Policy](/legal/anti-money-laundering)
 
 ## 12) Intellectual Property & Content License
 
@@ -90,7 +90,7 @@ The Service, including software, design, and logos, is owned by Aerium or its li
 * **Data retention.** We retain your data as long as your account is active and as required by law, our agreements with partners, and our business needs. Upon account closure, we may retain certain data for legal, regulatory, or business purposes.
 * **Data portability.** You may request a copy of your personal data in a portable format by contacting us through the in-app customer support chat or at **[adam@joinaerium.com](mailto:adam@joinaerium.com)**. We will provide this data within 30 days, subject to verification of your identity and any legal restrictions.
 * **Data deletion.** You may request deletion of your personal data, subject to our legal obligations to retain certain information (e.g., transaction records, fraud prevention data, regulatory requirements). We will delete data that we are not legally required to retain within 30 days of your request.
-* **Privacy policy.** Our collection, use, and protection of your data is further detailed in our **[Privacy Policy](joinaerium.com/legal/privacy-policy), which is incorporated by reference into these Terms.
+* **Privacy policy.** Our collection, use, and protection of your data is further detailed in our **[Privacy Policy](/legal/privacy-policy), which is incorporated by reference into these Terms.
 
 ## 14) Third‑Party Services
 
@@ -135,16 +135,16 @@ Questions or support: the in-app customer support chat or **[adam@joinaerium.com
 
 ### Annex A — Condition & Eligibility Guidelines 
 
-Aerium's Condition & Eligibility Guidlines are available at **[joinaerium.com/condition-and-eligibility-guidelines](joinaerium.com/legal/condition-and-eligibility-guidelines)**.
+Aerium's Condition & Eligibility Guidlines are available at **[Condition & Eligibility Guidlines](/legal/condition-eligibility)**.
 
 ### Annex B - Anti-Money Laundering
 
-Aerium's Anti-Money Laundering policy is available at **[joinaerium.com/anti-money-laundering](joinaerium.com/legal/anti-money-laundering)**.
+Aerium's Anti-Money Laundering policy is available at **[Anti-Money Laundering policy](/legal/anti-money-laundering)**.
 
 ### Annex C — Photo Guidelines
 
-Aerium's Photo Guidelines are available at **[joinaerium.com/photo-guidelines](joinaerium.com/legal/photo-guidelines)**.
+Aerium's Photo Guidelines are available at **[Photo Guidelines](/legal/photo-guidelines)**.
 
 ### Annex D — Privacy Policy
 
-Aerium's Privacy policy is available at **[joinaerium.com/privacy-policy](joinaerium.com/legal/privacy-policy)**.
+Aerium's Privacy policy is available at **[Privacy Policy](/legal/privacy-policy)**.

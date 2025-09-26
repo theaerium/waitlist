@@ -18,7 +18,7 @@ export const POLICIES: PolicyDefinition[] = [
   {
     slug: "photo-guidelines",
     title: "Photo Guidelines",
-    fileName: "photo_guidlines.md",
+    fileName: "photo_guidelines.md",
   },
   {
     slug: "privacy-policy",
