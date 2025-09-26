@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 import PolicyNavigation from "./policy-navigation";
 import { findPolicy } from "./policies";
 
-const docsDirectory = path.join(process.cwd(), "..", "app", "docs");
+const docsDirectory = path.join(process.cwd(), "docs");
 
 export function createPolicyMetadata(slug: string): Metadata {
   const policy = findPolicy(slug);
