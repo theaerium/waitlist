@@ -1,10 +1,5 @@
-export default function Privacy() {
-  return (
-    <div>
-      <h1>Privacy Policy</h1>
-      <p>
-        This is the privacy policy for Aerium.
-      </p>
-    </div>
-  );
+import { redirect } from "next/navigation";
+
+export default function PrivacyPage() {
+  redirect("/privacy-policy");
 }

@@ -62,3 +62,60 @@ body {
 		transform: rotateX(-50deg) rotateY(-15deg) rotateZ(-30deg) translateX(-50%);
 	}
 }
+
+.legal-content {
+  color: #1f2937;
+  font-size: 1rem;
+  line-height: 1.7;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.legal-content h1,
+.legal-content h2,
+.legal-content h3,
+.legal-content h4 {
+  color: #111827;
+  font-weight: 700;
+}
+
+.legal-content h1 {
+  font-size: 2.25rem;
+  margin-top: 2.5rem;
+}
+
+.legal-content h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+}
+
+.legal-content h3 {
+  font-size: 1.375rem;
+  margin-top: 1.5rem;
+}
+
+.legal-content p {
+  margin: 0;
+}
+
+.legal-content ul,
+.legal-content ol {
+  padding-left: 1.75rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.legal-content strong {
+  font-weight: 600;
+}
+
+.legal-content a {
+  color: #fd870b;
+  text-decoration: underline;
+}
+
+.legal-content hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 2rem 0;
+}
