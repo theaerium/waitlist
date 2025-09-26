@@ -34,8 +34,8 @@ Last updated: September 22, 2025
 - We may share necessary data with service providers (authentication, fraud, cloud hosting, card issuing, compliance tools) under contracts that limit use to providing their services.
 
 ### Contact
-- To report suspected misuse or ask AML questions, contact support through the in-app support chat or email adam@joinaerium.com. For emergencies, also contact local law enforcement.
+- To report suspected misuse or ask AML questions, contact support through the in-app support chat or email [adam@joinaerium.com](mailto:adam@joinaerium.com). For emergencies, also contact local law enforcement.
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's full terms of service agreements is available at [joinaerium.com/terms-of-service](joinaerium.com/terms-of-service).
+Aerium's full terms of service agreements is available at [joinaerium.com/legal/terms-of-service](joinaerium.com/legal/terms-of-service).

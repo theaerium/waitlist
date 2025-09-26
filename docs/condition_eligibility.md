@@ -2,7 +2,7 @@
 
 Last updated: September 22, 2025
 
-These guidelines define what you can deposit on Aerium and the minimum condition standards. They work alongside our [Terms of Service](joinaerium.com/terms-of-service), [Privacy Policy](joinaerium.com/privacy-policy), [Photo Guidlines](joinaerium.com/photo-guidelines), and [Anti-Money Laundering policy](joinaerium.com/anti-money-laundering).
+These guidelines define what you can deposit on Aerium and the minimum condition standards. They work alongside our [Terms of Service](joinaerium.com/legal/terms-of-service), [Privacy Policy](joinaerium.com/legal/privacy-policy), [Photo Guidlines](joinaerium.com/legal/photo-guidelines), and [Anti-Money Laundering policy](joinaerium.com/legal/anti-money-laundering).
 
 ### What’s eligible now
 - Clothing: tops, bottoms, dresses, outerwear, activewear, footwear.
@@ -44,15 +44,15 @@ These guidelines define what you can deposit on Aerium and the minimum condition
 - Check and disclose expiry dates where printed. Expired or near‑expiry items may be rejected.
 
 ### Photos are required
-- Follow the **[Photo Guidelines](joinaerium.com/photo-guidelines)**
+- Follow the **[Photo Guidelines](joinaerium.com/legal/photo-guidelines)**
 
 ### We may decline or reverse a deposit
 - Aerium may refuse or reverse deposits that violate these rules, appear unsafe or inauthentic, fail photo/anti‑fraud checks, or present legal/compliance risk.
 - Repeated or serious violations may lead to account limits, suspensions, or closure.
 
 ### Contact
-- Questions or privacy requests: through the in-app Aerium support chat or at adam@joinaerium.com
+- Questions or privacy requests: through the in-app Aerium support chat or at [adam@joinaerium.com](mailto:adam@joinaerium.com)
 
 **Aerium reserves the right to remove items, suspend users, and or pursue recourse to the fullest extent of the law when deemed necessary by Aerium leadership.** 
 
-Aerium's full terms of service agreements is available at [joinaerium.com/terms-of-service](joinaerium.com/terms-of-service).
+Aerium's full terms of service agreements is available at [joinaerium.com/legal/terms-of-service](joinaerium.com/legal/terms-of-service).
