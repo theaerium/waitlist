@@ -1,6 +1,6 @@
 # Aerium Condition & Eligibility Guidelines
 
-Last updated: September 22, 2025
+**Last updated:** September 22, 2025
 
 These guidelines define what you can deposit on Aerium and the minimum condition standards. They work alongside our [Terms of Service](/legal/terms-of-service), [Privacy Policy](/legal/privacy-policy), [Photo Guidlines](/legal/photo-guidelines), and [Anti-Money Laundering policy](/legal/anti-money-laundering).
 

@@ -1,6 +1,6 @@
 # Aerium Photo Submission Guidelines
 
-Last updated: September 22, 2025
+**Last updated:** September 22, 2025
 
 The following guidelines explain how to propely take photos of your items to deposit them into your  Aerium account. Following them helps your items deposit quickly and avoids common errors.
 

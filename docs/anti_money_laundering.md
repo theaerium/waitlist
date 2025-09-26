@@ -1,6 +1,6 @@
 # Aerium Anti‑Money Laundering (AML) Policy
 
-Last updated: September 22, 2025
+**Last updated:** September 22, 2025
 
 ### Overview
 - Aerium (operated by Senchi Technologies Inc.) provides a platform to deposit eligible items and receive a spendable value via a prepaid debit card. Aerium sells the deposited items after a holding period. We are not a bank. Card, account, and certain payment services are provided by regulated third‑party partners. Aerium maintains a risk‑based AML program consistent with applicable Canadian requirements and industry best practices.

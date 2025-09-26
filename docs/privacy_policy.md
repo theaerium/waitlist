@@ -1,6 +1,6 @@
 # Aerium Privacy Policy
 
-Last updated: September 22, 2025
+**Last updated:** September 22, 2025
 
 ### Who we are
 - Aerium is operated by Senchi Technologies Inc. We provide a platform that lets you deposit eligible items, receive a spendable value via a prepaid card. Aerium sells the deposited items after a holding period. We use third‑party providers for authentication, payments, card issuing, cloud hosting, and fraud prevention.
