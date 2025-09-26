@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 
 import PolicyNavigation from "./policy-navigation";
 import { findPolicy } from "./policies";
+import AeriumLogo from "../../components/AeriumLogo";
 
 const docsDirectory = path.join(process.cwd(), "docs");
 
@@ -37,7 +38,12 @@ export function createPolicyPage(slug: string) {
     return (
       <main className="mx-auto w-full max-w-6xl px-4 py-16 lg:px-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-16">
-          <PolicyNavigation currentSlug={slug} />
+          <div className="md:w-64">
+            <div className="mb-6">
+              <AeriumLogo size="sm" />
+            </div>
+            <PolicyNavigation currentSlug={slug} />
+          </div>
           <div className="flex-1">
             <header className="mb-10 space-y-2">
               <p className="text-sm font-semibold uppercase tracking-widest text-[#FD870B]">Legal</p>

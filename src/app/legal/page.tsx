@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { POLICIES } from "./policies";
+import AeriumLogo from "../../components/AeriumLogo";
 
 export const metadata = {
   title: "Legal | Aerium",
@@ -9,6 +10,9 @@ export const metadata = {
 export default function LegalIndexPage() {
   return (
     <main className="mx-auto flex w-full max-w-4xl flex-col gap-8 px-4 py-16">
+      <div className="mb-6">
+        <AeriumLogo size="md" />
+      </div>
       <header className="space-y-3">
         <p className="text-sm font-semibold uppercase tracking-widest text-[#FD870B]">
           Legal
