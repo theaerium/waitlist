@@ -1,32 +1,65 @@
 interface ButtonProps {
-  label: string;
+  text: string;
   icon?: React.ReactNode;
+  backgroundColor?: string;
+  textColor?: string;
+  fontSize?: string;
   onClick?: () => void;
   className?: string;
+  hoverColor?: string;
+  padding?: string;
 }
 
-export default function Button({ label, icon, onClick, className = "" }: ButtonProps) {
+export default function Button({ 
+  text, 
+  icon, 
+  backgroundColor = '#667EEA', 
+  textColor = 'white',
+  fontSize = 'medium',
+  onClick, 
+  className = "",
+  hoverColor,
+  padding = "px-6 py-4"
+}: ButtonProps) {
+  const fontSizeClasses = {
+    'small': 'text-sm',
+    'medium': 'text-base',
+    'large': 'text-lg',
+    'xl': 'text-xl'
+  };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (hoverColor) {
+      e.currentTarget.style.backgroundColor = hoverColor;
+    }
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.backgroundColor = backgroundColor;
+  };
+
   return (
     <button 
       onClick={onClick}
-      className={`flex items-center text-white gap-2 bg-aether-primary px-4 py-1 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-300 font-medium justify-center ${className}`}
+      className={`${padding} rounded-full font-medium transition-colors duration-200 flex items-center ${text ? 'space-x-2' : ''} ${fontSizeClasses[fontSize as keyof typeof fontSizeClasses]} ${className} group relative overflow-hidden`}
+      style={{ 
+        backgroundColor: backgroundColor,
+        color: textColor
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <span>{label}</span>
-      {icon || (
-        <svg 
-          width="16" 
-          height="16" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14"/>
-          <path d="m12 5 7 7-7 7"/>
-        </svg>
+      {text && (
+        <div className="relative h-full flex items-center overflow-hidden">
+          <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+            {text}
+          </span>
+          <span className="block absolute top-0 left-0 transition-transform duration-300 ease-out group-hover:translate-y-0 translate-y-full h-full flex items-center">
+            {text}
+          </span>
+        </div>
       )}
+      {icon}
     </button>
   )
 }
