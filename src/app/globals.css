@@ -75,6 +75,8 @@
   --font-mono: var(--font-geist-mono);
   --color-aether-primary: var(--aether-primary);
   --color-aether-secondary: var(--aether-secondary);
+  --color-cream: #FEFFF4;
+  --color-orange: #FD870B;
 }
 
 * {

@@ -1,139 +1,73 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import SpinningCards from './spinningCards';
-import CardStrip from './cards/CardStrip';
-import RandomCard from './cards/RandomCard';
+import Image from 'next/image';
 
 export default function Hero() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [referralLink, setReferralLink] = useState<string | null>(null);
-  const [referralId, setReferralId] = useState<string | null>(null);
-  const [numReferrals, setNumReferrals] = useState<number>(0);
-  const [isExistingUser, setIsExistingUser] = useState(false);
-  const [waitlistCount, setWaitlistCount] = useState<number | null>(null);
 
-  // Check for referral ID in URL on page load
-  useEffect(() => {
-    const pathSegments = window.location.pathname.split('/');
-    const refFromPath = pathSegments[pathSegments.length - 1];
-    
-    // Check if the last segment looks like a referral ID (8 characters, alphanumeric)
-    if (refFromPath && refFromPath.length === 8 && /^[a-z0-9]+$/.test(refFromPath)) {
-      setReferralId(refFromPath);
-    }
-  }, []);
 
-  // Fetch waitlist count on page load
-  useEffect(() => {
-    const fetchWaitlistCount = async () => {
-      try {
-        const res = await fetch("/api/waitlist-count");
-        if (res.ok) {
-          const data = await res.json();
-          setWaitlistCount(data.count);
-        }
-      } catch (error) {
-        console.error("Error fetching waitlist count:", error);
-      }
-    };
 
-    fetchWaitlistCount();
-  }, []);
-
-  const checkExistingUser = async (email: string) => {
-    try {
-      const res = await fetch("/api/get-user", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email.trim() }),
-      });
-      
-      if (res.ok) {
-        const data = await res.json();
-        setReferralLink(data.userData.referralLink);
-        setNumReferrals(data.userData.numReferrals);
-        setIsExistingUser(true);
-        setStatus("existing");
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error("Error checking existing user:", error);
-      return false;
-    }
+  const cardDimensions = (cardWidth: number) => {
+    const width = 453;
+    const height = 485;
+    const aspectRatio = width / height;
+    const newWidth = cardWidth;
+    const newHeight = newWidth / aspectRatio;
+    return { width: newWidth, height: newHeight };
   };
-
-  const handleJoinWaitlist = async () => {
-    if (!email.trim()) {
-      setStatus("Please enter an email address");
-      return;
-    }
-
-    setIsLoading(true);
-    setStatus(null);
-    
-    try {
-      // First check if user already exists
-      const isExisting = await checkExistingUser(email);
-      if (isExisting) {
-        setIsLoading(false);
-        return;
-      }
-
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ 
-          email: email.trim(),
-          referralId: referralId 
-        }),
-      });
-      
-      const data = await res.json();
-      
-      if (res.ok) {
-        setStatus("success");
-        setEmail("");
-        setReferralLink(data.referralLink);
-        setNumReferrals(0);
-        setIsExistingUser(false);
-        // Clear referral ID from URL without page reload
-        const newUrl = window.location.pathname;
-        window.history.replaceState({}, '', newUrl);
-        setReferralId(null);
-      } else {
-        if (res.status === 409) {
-          setStatus("You've already joined the waitlist! We're working hard to launch ASAP!");
-        } else {
-          setStatus(data.error || "Failed to join waitlist");
-        }
-      }
-    } catch (error) {
-      console.error("Error joining waitlist:", error);
-      setStatus("Network error. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const copyReferralLink = async () => {
-    if (referralLink) {
-      try {
-        await navigator.clipboard.writeText(referralLink);
-        setTimeout(() => setStatus("success"), 2000);
-      } catch (error) {
-        console.error("Failed to copy link:", error);
-        setStatus("Failed to copy link. Please copy manually.");
-      }
-    }
+  const phoneDimensions = (phoneWidth: number) => {
+    const width = 252.52;
+    const height = 536;
+    const aspectRatio = width / height;
+    const newWidth = phoneWidth;
+    const newHeight = newWidth / aspectRatio;
+    return { width: newWidth, height: newHeight };
   };
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 overflow-hidden relative h-screen">
-      
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Main Content */}
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-4">
+        {/* Top Section - Main Headline */}
+        <div className="pt-16 pb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-black leading-tight">
+            Your closet, your cash
+          </h1>
+        </div>
+        
+          <div className="relative">
+            <div className="bg-gradient-to-b from-cream to-orange rounded-xl sm:rounded-[1rem] lg:rounded-[1rem] pt-10 sm:pt-14 lg:pt-18 px-10 sm:px-14 lg:px-18 pb-6 sm:pb-8 lg:pb-10 h-[60vh] sm:h-[65vh] md:h-[65vh] lg:h-[75vh] xl:h-[80vh]">
+              <div className="h-full flex flex-col justify-between">
+                  <div className="flex justify-center items-center mt-12 sm:mt-0">
+                    <div className="relative">
+                      <Image
+                        src="/mocks/phone_main.png"
+                        alt="Aerium App on Phone"
+                        width={phoneDimensions(280).width}
+                        height={phoneDimensions(280).height}
+                        className="object-contain translate-x-8 w-[160px] sm:w-[180px] md:w-[160px] lg:w-[200px] xl:w-[280px] 2xl:w-[320px]"
+                        draggable={false}
+                      />
+                      <Image
+                        src="/cards/aerium_card.png"
+                        alt="Aerium Visa Card"
+                        width={cardDimensions(220).width}
+                        height={cardDimensions(220).height}
+                        className="object-contain absolute bottom-0 left-1/2 -translate-x-24 sm:-translate-x-32 md:-translate-x-28 lg:-translate-x-36 xl:-translate-x-48 2xl:-translate-x-64 z-10 w-[120px] sm:w-[130px] md:w-[120px] lg:w-[140px] xl:w-[200px] 2xl:w-[240px]"
+                        draggable={false}
+                      />
+                    </div>
+                  </div>
+                
+                {/* Bottom Left Text */}
+                <div className="flex justify-start items-end pb-2">
+                  <p className="text-sm sm:text-lg lg:text-xl text-white leading-relaxed max-w-xl">
+                    A spending account that improves your relationship with money. Turn your closet into cash to spend without purchase anxiety
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   );
 }
