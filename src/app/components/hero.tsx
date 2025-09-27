@@ -32,12 +32,12 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-black leading-tight">
             Your closet, your cash
           </h1>
-        </div>
-        
+              </div>
+              
           <div className="relative">
             <div className="bg-gradient-to-b from-cream to-orange rounded-xl sm:rounded-[1rem] lg:rounded-[1rem] pt-10 sm:pt-14 lg:pt-18 px-10 sm:px-14 lg:px-18 pb-6 sm:pb-8 lg:pb-10 h-[60vh] sm:h-[65vh] md:h-[65vh] lg:h-[75vh] xl:h-[80vh]">
               <div className="h-full flex flex-col justify-between">
-                  <div className="flex justify-center items-center mt-12 sm:mt-0">
+                  <div className="flex justify-center items-center -mt-8 sm:-mt-4 lg:-mt-2">
                     <div className="relative">
                       <Image
                         src="/mocks/phone_main.png"
@@ -55,18 +55,18 @@ export default function Hero() {
                         className="object-contain absolute bottom-0 left-1/2 -translate-x-24 sm:-translate-x-32 md:-translate-x-28 lg:-translate-x-36 xl:-translate-x-48 2xl:-translate-x-64 z-10 w-[120px] sm:w-[130px] md:w-[120px] lg:w-[140px] xl:w-[200px] 2xl:w-[240px]"
                         draggable={false}
                       />
-                    </div>
+                </div>
                   </div>
                 
                 {/* Bottom Left Text */}
                 <div className="flex justify-start items-end pb-2">
                   <p className="text-sm sm:text-lg lg:text-xl text-white leading-relaxed max-w-xl">
-                    A spending account that improves your relationship with money. Turn your closet into cash to spend without purchase anxiety
+                    A spending account that improves your relationship with money. Turn your closet into cash and spend without purchase anxiety
                   </p>
                 </div>
-              </div>
             </div>
-          </div>
+            </div>
+        </div>
       </div>
     </div>
   );

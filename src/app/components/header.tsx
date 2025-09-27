@@ -47,7 +47,7 @@ export default function Header() {
 
   return (
     // TODO: Maybe kill the opacity and just use a background color
-    <header className="border-black sticky top-4 z-50 bg-cream opacity-100">
+    <header className="border-black sticky top-0 py-2 z-50 bg-cream opacity-100">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
