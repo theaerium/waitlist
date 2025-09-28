@@ -106,27 +106,27 @@ export default function Footer() {
               </h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/terms-of-service" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+                  <Link href="/terms-of-service" className="text-white hover:text-gray-900 text-sm transition-colors">
                     Terms of Service
                   </Link>
                 </li>
                 <li>
-                  <Link href="/condition-eligibility" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+                  <Link href="/condition-eligibility" className="text-white hover:text-gray-900 text-sm transition-colors">
                     Condition & Eligibility Guidelines
                   </Link>
                 </li>
                 <li>
-                  <Link href="/photo-guidelines" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+                  <Link href="/photo-guidelines" className="text-white hover:text-gray-900 text-sm transition-colors">
                     Photo Guidelines
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+                  <Link href="/privacy-policy" className="text-white hover:text-gray-900 text-sm transition-colors">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/anti-money-laundering" className="text-gray-600 hover:text-gray-900 text-sm transition-colors">
+                  <Link href="/anti-money-laundering" className="text-white hover:text-gray-900 text-sm transition-colors">
                     Anti-Money Laundering Policy
                   </Link>
                 </li>
