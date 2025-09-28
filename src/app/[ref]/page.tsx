@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Home from "../page";
+import { redirect } from "next/navigation";
 
 interface Props {
   params: Promise<{
@@ -46,5 +46,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ReferralPage({ params }: Props) {
-  return <Home />;
+  const { ref } = await params;
+  redirect(`/waitlist?ref=${ref}`);
 }
