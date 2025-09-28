@@ -10,6 +10,7 @@ interface DetailCardProps {
   backgroundColor?: string;
   className?: string;
   showArrow?: boolean;
+  imageTouchesBottom?: boolean;
 }
 
 export default function DetailCard({
@@ -21,7 +22,8 @@ export default function DetailCard({
   isReversed = false,
   backgroundColor = '#EEEFE2',
   className = '',
-  showArrow = true
+  showArrow = true,
+  imageTouchesBottom = false
 }: DetailCardProps) {
   const arrowIcon = () => {
     return (
@@ -56,7 +58,7 @@ export default function DetailCard({
 
           <div className="flex-1">
             <div 
-                className="w-full h-full sm:h-80 lg:h-96 bg-gray-200 rounded-xl flex items-center justify-center p-4"
+                className={`w-full h-full sm:h-80 lg:h-96 bg-gray-200 rounded-xl flex items-center justify-center ${imageTouchesBottom ? 'p-4 pb-0' : 'p-4'}`}
                 style={{ backgroundColor }}
             >
               <Image

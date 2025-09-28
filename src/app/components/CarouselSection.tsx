@@ -7,15 +7,30 @@ import theme from '../config/theme';
 
 export default function CarouselSection() {
   const carouselRef = useRef<{ goToNext: () => void; goToPrevious: () => void }>(null);
+
+  const scrollToDetailSection = (sectionIndex: number) => {
+    const detailSection = document.getElementById('detail-cards-section');
+    if (detailSection) {
+      const cards = detailSection.querySelectorAll('[data-card-index]');
+      const targetCard = cards[sectionIndex] as HTMLElement;
+      if (targetCard) {
+        targetCard.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        });
+      }
+    }
+  };
   const carouselCards = [
     {
       id: 'deposit',
-      backgroundColor: theme.colors.gray,
+      backgroundColor: theme.colors.orange,
       imageSrc: '/carousel/deposit.png',
       imageAlt: 'Deposit items',
-      imagePosition: 'center' as const,
+      imagePosition: 'bottom' as const,
       bottomText: 'Deposit',
-      bottomTextColor: 'black'
+      bottomTextColor: 'black',
+      onClick: () => scrollToDetailSection(0)
     },
     {
       id: 'spend-card',
@@ -24,7 +39,8 @@ export default function CarouselSection() {
       imageAlt: 'Spend with card',
       imagePosition: 'bottom' as const,
       bottomText: 'Spend',
-      bottomTextColor: 'black'
+      bottomTextColor: 'black',
+      onClick: () => scrollToDetailSection(1)
     },
     {
       id: 'spend-shipping',
@@ -33,7 +49,8 @@ export default function CarouselSection() {
       imageAlt: 'Send with shipping label',
       imagePosition: 'center' as const,
       bottomText: 'Send',
-      bottomTextColor: 'black'
+      bottomTextColor: 'black',
+      onClick: () => scrollToDetailSection(2)
     },
     {
       id: 'security',
@@ -42,7 +59,8 @@ export default function CarouselSection() {
       imageAlt: 'Security',
       imagePosition: 'center' as const,
       bottomText: 'Security',
-      bottomTextColor: 'black'
+      bottomTextColor: 'black',
+      onClick: () => scrollToDetailSection(3)
     }
   ];
 

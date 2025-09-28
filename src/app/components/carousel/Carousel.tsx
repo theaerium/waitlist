@@ -14,6 +14,7 @@ interface CarouselProps {
     textColor?: string;
     bottomText?: string;
     bottomTextColor?: string;
+    onClick?: () => void;
   }>;
   className?: string;
 }
@@ -179,6 +180,7 @@ const Carousel = forwardRef<{ goToNext: () => void; goToPrevious: () => void }, 
                 textColor={card.textColor}
                 bottomText={card.bottomText}
                 bottomTextColor={card.bottomTextColor}
+                onClick={card.onClick}
               />
             </div>
           ))}

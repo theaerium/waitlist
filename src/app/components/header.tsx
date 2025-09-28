@@ -6,28 +6,6 @@ import Button from './button';
 
 
 export default function Header() {
-  const scrollToEmail = () => {
-    // Try multiple selectors to find the email input field
-    const emailInput = document.querySelector('input[placeholder*="email"]') || 
-                      document.querySelector('input[placeholder*="Enter your email"]') ||
-                      document.querySelector('input[type="email"]');
-    
-    if (emailInput) {
-      // Scroll to the input field
-      emailInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      
-      // Focus the input field after a short delay to ensure scrolling is complete
-      setTimeout(() => {
-        (emailInput as HTMLInputElement).focus();
-      }, 500);
-      
-      console.log('Scrolled to email section and focused input');
-    } else {
-      console.log('Email input not found');
-      // Fallback: scroll to top of page
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
 
   const arrowIcon = () => {
     return (
@@ -57,43 +35,45 @@ export default function Header() {
           </div>
 
             <div className="hidden md:flex items-center space-x-4">
-              <Button
-                text="Sign up"
-                fontSize="large"
-                backgroundColor={theme.colors.orange}
-                textColor={theme.colors.black}
-                hoverColor="#E67A00"
-                onClick={scrollToEmail}
-                icon={arrowIcon()}
-              />
-              <Button
+              <Link href="/waitlist">
+                <Button
+                  text="Sign up"
+                  fontSize="large"
+                  backgroundColor={theme.colors.orange}
+                  textColor={theme.colors.black}
+                  hoverColor="#E67A00"
+                  icon={arrowIcon()}
+                />
+              </Link>
+              {/* <Button
                 text="Log in"
                 backgroundColor={theme.colors.black}
                 textColor="white"
                 hoverColor="#333333"
-              />
+              /> */}
             </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-4">
-            <Button
-              text="Sign up"
-              backgroundColor={theme.colors.orange}
-              textColor={theme.colors.black}
-              hoverColor="#E67A00"
-              padding="px-4 py-4"
-              fontSize="large"
-              onClick={scrollToEmail}
-              icon={arrowIcon()}
-            />
-            <Button
+            <Link href="/waitlist">
+              <Button
+                text="Sign up"
+                backgroundColor={theme.colors.orange}
+                textColor={theme.colors.black}
+                hoverColor="#E67A00"
+                padding="px-4 py-4"
+                fontSize="large"
+                icon={arrowIcon()}
+              />
+            </Link>
+            {/* <Button
               text=""
               backgroundColor={theme.colors.black}
               textColor="white"
               hoverColor="#333333"
               padding="p-4"
               icon={burgerMenuIcon()}
-            />
+            /> */}
           </div>
         </div>
       </div>

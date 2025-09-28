@@ -29,15 +29,15 @@ export default function TestimonialCard({
         className="w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-xl flex items-center justify-center relative"
         style={{ backgroundColor }}
       >
-        <div className="absolute top-4 left-4 text-6xl lg:text-7xl xl:text-8xl font-bold font-general-sans" style={{ color: textColor }}>
+        <div className="absolute top-4 left-4 text-6xl lg:text-7xl xl:text-8xl font-medium" style={{ color: textColor, fontFamily: 'General Sans', fontWeight: 500 }}>
             {'"'}
         </div>
 
         {text && (
           <div className="flex items-center justify-center px-8">
             <p 
-              className="text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight font-general-sans"
-              style={{ color: textColor }}
+              className="text-lg lg:text-xl xl:text-2xl font-medium text-center leading-tight"
+              style={{ color: textColor, fontFamily: 'General Sans', fontWeight: 500 }}
             >
               {text}
             </p>
@@ -48,7 +48,7 @@ export default function TestimonialCard({
         <div className="mt-3 flex items-center group">
           <p 
             className="text-lg font-medium pr-2"
-            style={{ color: bottomTextColor }}
+            style={{ color: bottomTextColor, fontFamily: 'General Sans', fontWeight: 500 }}
           >
             {bottomText}
           </p>

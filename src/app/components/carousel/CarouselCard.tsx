@@ -10,6 +10,7 @@ interface CarouselCardProps {
   bottomText?: string;
   bottomTextColor?: string;
   className?: string;
+  onClick?: () => void;
 }
 
 export default function CarouselCard({
@@ -21,7 +22,8 @@ export default function CarouselCard({
   textColor = 'black',
   bottomText,
   bottomTextColor = 'black',
-  className = ''
+  className = '',
+  onClick
 }: CarouselCardProps) {
   const getImagePositionClasses = () => {
     switch (imagePosition) {
@@ -49,8 +51,12 @@ export default function CarouselCard({
   return (
     <div className={`flex flex-col ${className}`}>
       <div 
-        className={`w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-xl flex ${getImagePositionClasses()}`}
+        className={`w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-xl flex ${getImagePositionClasses()} ${onClick ? 'cursor-pointer hover:opacity-90 transition-opacity' : ''}`}
         style={{ backgroundColor }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onClick?.();
+        }}
       >
         <Image
           src={imageSrc}
@@ -73,7 +79,13 @@ export default function CarouselCard({
         )}
       </div>
       {bottomText && (
-        <div className="mt-3 flex items-center group">
+        <div 
+          className="mt-3 flex items-center group"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClick?.();
+          }}
+        >
           <p 
             className="text-lg font-medium pr-2"
             style={{ color: bottomTextColor }}

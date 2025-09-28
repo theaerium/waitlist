@@ -9,28 +9,28 @@ export default function TestimonialSection() {
   const carouselRef = useRef<{ goToNext: () => void; goToPrevious: () => void }>(null);
   const testimonialCards = [
     {
-      id: 'testimonial-1',
-      backgroundColor: '#FF983F',
-      text: 'I love it',
-      textColor: 'white'
+      id: 'testimonial-2',
+      backgroundColor: theme.colors.orange,
+      text: 'This has been super helpful to get rid of things I no longer use AND let me feel better about spending on things I do want',
+      textColor: theme.colors.white
     },
     {
-      id: 'testimonial-2',
-      backgroundColor: '#EEEFE2',
-      text: 'I love it',
-      textColor: '#FF983F'
+      id: 'testimonial-1',
+      backgroundColor: theme.colors.gray,
+      text: 'I love it, I would 100% use this over FB Marketplace / Depop',
+      textColor: theme.colors.black
     },
     {
       id: 'testimonial-3',
-      backgroundColor: '#000000',
-      text: 'I love it',
-      textColor: 'white'
+      backgroundColor: theme.colors.black,
+      text: 'I\'m going to use this to buy the purse I\'ve been eyeing for months! Now my husband can\'t complain about me spending money!',
+      textColor: theme.colors.white
     },
     {
       id: 'testimonial-4',
-      backgroundColor: '#FF983F',
-      text: 'I love it',
-      textColor: 'white'
+      backgroundColor: theme.colors.gray,
+      text: 'This is 🔥🔥🔥',
+      textColor: theme.colors.black
     }
   ];
 
@@ -39,7 +39,7 @@ export default function TestimonialSection() {
       <div className="w-full">
         <div className="mb-8 flex items-start justify-between">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-black text-left">
-            Aerium has made me feel so much better about spending on everything. From groceries to my afternoon treat.
+            {'"Aerium has made me feel so much better about spending on everything. From groceries to my afternoon treat."'}
           </h2>
           <div className="flex space-x-2">
             <Button

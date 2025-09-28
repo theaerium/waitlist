@@ -41,7 +41,7 @@ export default function Button({
   return (
     <button 
       onClick={onClick}
-      className={`${padding} rounded-full font-medium transition-colors duration-200 flex items-center ${text ? 'space-x-2' : ''} ${fontSizeClasses[fontSize as keyof typeof fontSizeClasses]} ${className} group relative overflow-hidden`}
+      className={`${padding} rounded-full font-medium transition-colors duration-200 flex items-center ${text && !className.includes('justify-between') ? 'space-x-2' : ''} ${fontSizeClasses[fontSize as keyof typeof fontSizeClasses]} ${className} group relative overflow-hidden`}
       style={{ 
         backgroundColor: backgroundColor,
         color: textColor

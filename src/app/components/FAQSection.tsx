@@ -6,22 +6,22 @@ const faqData = [
   {
     id: 1,
     question: "Is Aerium a bank account? Do I need to link my bank account?",
-    answer: "Aerium is not a traditional bank account. You don't need to link your existing bank account. Instead, you can deposit items from your closet to get spending credit that you can use anywhere."
+    answer: "Aerium is not a traditional bank account. You don't need to link your existing bank account. Instead, you deposit items from your closet and cashout to a prepaid visa card that you can use anywhere visa is accepted."
   },
   {
     id: 2,
     question: "Do I get real money or credit to use somewhere?",
-    answer: "You get real spending credit that works like cash. You can use your Aerium card anywhere Visa is accepted, both online and in stores."
+    answer: "You get real money. When you cashout, you get a prepaid visa card that you can use anywhere visa is accepted."
   },
   {
     id: 3,
     question: "How do I give you my items?",
-    answer: "Simply upload photos of items you want to deposit through our app. We'll provide you with a prepaid shipping label, and you can send them to us. Once we receive and verify your items, you'll get spending credit."
+    answer: "Once we find a buyer, you will be notified and get a prepaid shipping label. You can then directly drop off the package at your nearest post office or we can pick it up from you if you are in the GTA."
   },
   {
     id: 4,
     question: "Is there a limit to how much I can use the platform?",
-    answer: "There are no strict limits on how much you can deposit or spend. The amount depends on the value of items you deposit and our verification process."
+    answer: "Currently, there is a limit of $200 per week to ensure we are able to sustainably scale and sell the items in a timely manner. Eventually we will remove the limit."
   }
 ];
 
