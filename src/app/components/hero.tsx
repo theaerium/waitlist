@@ -35,9 +35,9 @@ export default function Hero() {
               </div>
               
           <div className="relative">
-            <div className="bg-gradient-to-b from-cream to-orange rounded-xl sm:rounded-[1rem] lg:rounded-[1rem] pt-10 sm:pt-14 lg:pt-18 px-10 sm:px-14 lg:px-18 pb-6 sm:pb-8 lg:pb-10 h-[60vh] sm:h-[65vh] md:h-[65vh] lg:h-[75vh] xl:h-[80vh]">
-              <div className="h-full flex flex-col justify-between">
-                  <div className="flex justify-center items-center -mt-8 sm:-mt-4 lg:-mt-2">
+            <div className="bg-gradient-to-b from-cream to-orange rounded-xl sm:rounded-[1rem] lg:rounded-[1rem] pt-10 sm:pt-14 lg:pt-18 px-10 sm:px-14 lg:px-18 pb-6 sm:pb-8 lg:pb-10 min-h-[60vh] sm:min-h-[65vh] md:min-h-[65vh] lg:min-h-[75vh] xl:min-h-[80vh] max-h-[90vh]">
+              <div className="h-full flex flex-col min-h-[50vh] relative">
+                  <div className="flex justify-center items-center -mt-8 sm:-mt-4 lg:-mt-2 flex-shrink-0 flex-grow">
                     <div className="relative">
                       <Image
                         src="/mocks/phone_main.png"
@@ -58,11 +58,12 @@ export default function Hero() {
                 </div>
                   </div>
                 
-                {/* Bottom Left Text */}
-                <div className="flex justify-start items-end pb-2">
-                  <p className="text-sm sm:text-lg lg:text-xl text-white leading-relaxed max-w-xl">
-                    A spending account that improves your relationship with money. Turn your closet into cash and spend without purchase anxiety
-                  </p>
+                <div className="sticky bottom-0 left-0 right-0 z-20">
+                  <div className="px-4 sm:px-6 lg:px-8 pb-4 sm:pb-6 lg:pb-12 xl:pb-16 2xl:pb-20">
+                    <p className="text-sm sm:text-lg lg:text-xl lg:mt-20 text-white leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+                      A spending account that improves your relationship with money. Turn your closet into cash and spend without purchase anxiety
+                    </p>
+                  </div>
                 </div>
             </div>
             </div>
