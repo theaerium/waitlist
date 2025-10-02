@@ -1,24 +1,44 @@
-"use client"
+"use client";
 
-import Link from 'next/link';
-import theme from '../config/theme';
-import Button from './button';
-
+import Link from "next/link";
+import theme from "../config/theme";
+import Button from "./button";
 
 export default function Header() {
-
   const arrowIcon = () => {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.2" stroke="currentColor" className="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2.2"
+        stroke="currentColor"
+        className="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+        />
       </svg>
     );
   };
 
   const burgerMenuIcon = () => {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 9h16.5m-16.5 6.75h16.5"
+        />
       </svg>
     );
   };
@@ -29,33 +49,42 @@ export default function Header() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-black font-medium text-3xl tracking-wide">
+            <Link
+              href="/"
+              className="text-black font-medium text-3xl tracking-wide"
+            >
               AERIUM
             </Link>
           </div>
 
-            <div className="hidden md:flex items-center space-x-4">
-              <Link href="/waitlist">
-                <Button
-                  text="Sign up"
-                  fontSize="large"
-                  backgroundColor={theme.colors.orange}
-                  textColor={theme.colors.black}
-                  hoverColor="#E67A00"
-                  icon={arrowIcon()}
-                />
-              </Link>
-              {/* <Button
+          <div className="hidden md:flex items-center space-x-4">
+            <Link
+              href="https://apps.apple.com/ca/app/id6751736126"
+              target="_blank"
+            >
+              <Button
+                text="Sign up"
+                fontSize="large"
+                backgroundColor={theme.colors.orange}
+                textColor={theme.colors.black}
+                hoverColor="#E67A00"
+                icon={arrowIcon()}
+              />
+            </Link>
+            {/* <Button
                 text="Log in"
                 backgroundColor={theme.colors.black}
                 textColor="white"
                 hoverColor="#333333"
               /> */}
-            </div>
+          </div>
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-4">
-            <Link href="/waitlist">
+            <Link
+              href="https://apps.apple.com/ca/app/id6751736126"
+              target="_blank"
+            >
               <Button
                 text="Sign up"
                 backgroundColor={theme.colors.orange}
