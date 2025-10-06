@@ -4,6 +4,33 @@ import Link from "next/link";
 import Image from "next/image";
 import theme from "../config/theme";
 
+type SubstackSubscribeEmbedProps = {
+  className?: string;
+};
+
+function SubstackSubscribeEmbed({ className }: SubstackSubscribeEmbedProps) {
+  return (
+    <div className={className}>
+      <iframe
+        src="https://joinaerium.substack.com/embed"
+        title="Subscribe to Aerium on Substack"
+        style={{
+          backgroundColor: "#fefff4",
+          borderRadius: "12px",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
+          width: "100%",
+          height: "220px",
+        }}
+        width="100%"
+        height="220"
+        frameBorder="0"
+        scrolling="no"
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
 export default function Footer() {
   return (
     <footer
@@ -127,6 +154,8 @@ export default function Footer() {
                     </svg>
                   </a> */}
                 </div>
+
+                <SubstackSubscribeEmbed className="mt-6" />
 
                 <div>
                   <h3 className="text-lg font-bold mb-2">Chat with us</h3>
@@ -259,7 +288,12 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="col-span-3 flex justify-center md:justify-end">
+            <div className="col-span-1">
+              <h3 className="text-lg font-bold mb-6">Subscribe</h3>
+              <SubstackSubscribeEmbed />
+            </div>
+
+            <div className="col-span-2 flex justify-center md:justify-end">
               <div className="">
                 <Image
                   src="/distribution/qr_code.png"
