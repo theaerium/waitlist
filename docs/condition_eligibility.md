@@ -18,6 +18,7 @@ These guidelines define what you can deposit on Aerium and the minimum condition
 - Food, supplements, medicines, medical devices, or ingestibles.
 - Used or opened beauty/cosmetics, swatched testers, or products without intact seals; expired items.
 - Underwear, socks, bathing suits or any items intended to come into direct contact with intimate or private areas.
+- Company branded apparel, accesories, bags, or products of any nature.
 - Items with infestations, strong odors (smoke, mildew), mold, or contamination.
 - Broken, nonfunctional, or incomplete items (e.g., missing straps, large tears rendering the item unusable) unless clearly repairable and disclosed.
 - Categories outside the list above in the What's eligible now sections.
