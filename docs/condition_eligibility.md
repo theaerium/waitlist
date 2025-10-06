@@ -17,9 +17,10 @@ These guidelines define what you can deposit on Aerium and the minimum condition
 - Weapons, weapon accessories, fireworks, hazardous materials, pressurized/aerosol products, vape or tobacco products.
 - Food, supplements, medicines, medical devices, or ingestibles.
 - Used or opened beauty/cosmetics, swatched testers, or products without intact seals; expired items.
+- Underwear, socks, bathing suits or any items intended to come into direct contact with intimate or private areas.
 - Items with infestations, strong odors (smoke, mildew), mold, or contamination.
 - Broken, nonfunctional, or incomplete items (e.g., missing straps, large tears rendering the item unusable) unless clearly repairable and disclosed.
-- Categories outside the list above in the What's eligibl now sections.
+- Categories outside the list above in the What's eligible now sections.
 
 ### Condition standards
 - New (NWT/NIB): Unused, with tags/box and all accessories. Beauty must be sealed with intact safety seals.
